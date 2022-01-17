@@ -1,0 +1,15 @@
+D:\Rookies4\Assign1\bin\Debug\net6.0\Assign1.exe
+D:\Rookies4\Assign1\bin\Debug\net6.0\Assign1.deps.json
+D:\Rookies4\Assign1\bin\Debug\net6.0\Assign1.runtimeconfig.json
+D:\Rookies4\Assign1\bin\Debug\net6.0\Assign1.dll
+D:\Rookies4\Assign1\bin\Debug\net6.0\ref\Assign1.dll
+D:\Rookies4\Assign1\bin\Debug\net6.0\Assign1.pdb
+D:\Rookies4\Assign1\obj\Debug\net6.0\Assign1.csproj.AssemblyReference.cache
+D:\Rookies4\Assign1\obj\Debug\net6.0\Assign1.GeneratedMSBuildEditorConfig.editorconfig
+D:\Rookies4\Assign1\obj\Debug\net6.0\Assign1.AssemblyInfoInputs.cache
+D:\Rookies4\Assign1\obj\Debug\net6.0\Assign1.AssemblyInfo.cs
+D:\Rookies4\Assign1\obj\Debug\net6.0\Assign1.csproj.CoreCompileInputs.cache
+D:\Rookies4\Assign1\obj\Debug\net6.0\Assign1.dll
+D:\Rookies4\Assign1\obj\Debug\net6.0\ref\Assign1.dll
+D:\Rookies4\Assign1\obj\Debug\net6.0\Assign1.pdb
+D:\Rookies4\Assign1\obj\Debug\net6.0\Assign1.genruntimeconfig.cache
