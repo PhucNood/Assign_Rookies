@@ -21,9 +21,10 @@ namespace Assign1_LinQ.Business
             List<Member> ListEqual2000 = (from member in members where member.DateOfBirth.Year==2000 select member).ToList();
             List<Member> ListUnder2000 = (from member in members where member.DateOfBirth.Year<2000 select member).ToList();
             List<Member> ListOver2000 = (from member in members where member.DateOfBirth.Year>2000 select member).ToList();
-
-           
-
+            // c2
+           // var ListEqual2000 = (members.Where(m => m.DateOfBirth.Year==2000).ToList();
+         // var ListUnder2000 = (members.Where(m => m.DateOfBirth.Year<2000).ToList();
+         // var ListOver2000 = (members.Where(m => m.DateOfBirth.Year>2000).ToList();
             return new List<List<Member>>{ListEqual2000, ListUnder2000, ListOver2000};
         }
 
@@ -31,7 +32,7 @@ namespace Assign1_LinQ.Business
         {
             
             var ListMemberbyGender = members.Where(m => m.Gender == Gender.Male).ToList();
-            
+           // c2 var ListMemberbyGender= (from member in members where member.Gender == Gender.Female select member).ToList();
             
             return ListMemberbyGender;
         }
