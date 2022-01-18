@@ -30,9 +30,13 @@ namespace Assign1.Business
 
             foreach (var member in members)
             {
-                if (member.Age == 2000) ListEqual2000.Add(member);
-               else if (member.Age < 2000) ListUnder2000.Add(member);
-              else if (member.Age > 2000) ListOver2000.Add(member);
+                switch (member.Age)
+                {
+                    case 2000: ListEqual2000.Add(member); break;
+                    case >2000: ListOver2000.Add(member); break;
+                    case <2000: ListUnder2000.Add(member); break;
+                   
+                }
             }
 
             return new List<List<Member>> { ListUnder2000, ListUnder2000, ListOver2000 };
@@ -67,6 +71,12 @@ namespace Assign1.Business
             return members.ToArray()[0];
             
             
+        }
+
+        public void PrintList(List<Member> members){
+            foreach (var member in members){
+                member.PrintInfor();
+            }
         }
 
         

@@ -1,0 +1,15 @@
+D:\Rookies4\Assign1_LinQ\obj\Debug\net6.0\Assign1_LinQ.csproj.AssemblyReference.cache
+D:\Rookies4\Assign1_LinQ\obj\Debug\net6.0\Assign1_LinQ.GeneratedMSBuildEditorConfig.editorconfig
+D:\Rookies4\Assign1_LinQ\obj\Debug\net6.0\Assign1_LinQ.AssemblyInfoInputs.cache
+D:\Rookies4\Assign1_LinQ\obj\Debug\net6.0\Assign1_LinQ.AssemblyInfo.cs
+D:\Rookies4\Assign1_LinQ\obj\Debug\net6.0\Assign1_LinQ.csproj.CoreCompileInputs.cache
+D:\Rookies4\Assign1_LinQ\bin\Debug\net6.0\Assign1_LinQ.exe
+D:\Rookies4\Assign1_LinQ\bin\Debug\net6.0\Assign1_LinQ.deps.json
+D:\Rookies4\Assign1_LinQ\bin\Debug\net6.0\Assign1_LinQ.runtimeconfig.json
+D:\Rookies4\Assign1_LinQ\bin\Debug\net6.0\Assign1_LinQ.dll
+D:\Rookies4\Assign1_LinQ\bin\Debug\net6.0\ref\Assign1_LinQ.dll
+D:\Rookies4\Assign1_LinQ\bin\Debug\net6.0\Assign1_LinQ.pdb
+D:\Rookies4\Assign1_LinQ\obj\Debug\net6.0\Assign1_LinQ.dll
+D:\Rookies4\Assign1_LinQ\obj\Debug\net6.0\ref\Assign1_LinQ.dll
+D:\Rookies4\Assign1_LinQ\obj\Debug\net6.0\Assign1_LinQ.pdb
+D:\Rookies4\Assign1_LinQ\obj\Debug\net6.0\Assign1_LinQ.genruntimeconfig.cache

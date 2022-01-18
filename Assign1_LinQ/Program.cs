@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Assign1.Objects;
-using Assign1.Business;
+using Assign1_LinQ.Objects;
+using Assign1_LinQ.Business;
 
-namespace Assign1
+namespace Assign1_LinQ
 {
     class Program
     {
@@ -61,8 +61,7 @@ namespace Assign1
                 Console.WriteLine("3. Return a new list that contains Full Name only");
                 Console.WriteLine("4.  Return 3 lists");
                 Console.WriteLine("5.  Return the first person who was born in Ha Noi");
-                Console.WriteLine("0. Eixt");
-                Console.Write("Enter your choice: ");
+                Console.WriteLine("Enter your choice: ");
 
                 int option = Convert.ToInt32(Console.ReadLine());
 
@@ -103,7 +102,7 @@ namespace Assign1
                             // cl.SlitMembersByBirthYear();
                             foreach (var list in Working.GetListSplitByAge(ListMember))
                             {
-                               
+                                Console.WriteLine("___________________________________");
                                 Working.PrintList(list);
                                 Console.WriteLine("___________________________________");
                             }

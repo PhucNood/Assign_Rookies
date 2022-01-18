@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Assign1.Objects;
+using Assign1_LinQ.Objects;
 
-namespace Assign1.Business
+namespace Assign1_LinQ.Business
 {
   public  interface IClassManufication
     {
