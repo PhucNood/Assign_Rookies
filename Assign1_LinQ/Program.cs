@@ -55,6 +55,7 @@ namespace Assign1_LinQ
             ClassWork Working = new ClassWork();
             while (true)
             {
+                System.Console.WriteLine();
                 Console.WriteLine("=========================================");
                 Console.WriteLine("1. Return a list of members who is Male");
                 Console.WriteLine("2. Return the oldest one based on “Age” ");
@@ -62,6 +63,7 @@ namespace Assign1_LinQ
                 Console.WriteLine("4.  Return 3 lists");
                 Console.WriteLine("5.  Return the first person who was born in Ha Noi");
                 Console.WriteLine("Enter your choice: ");
+                
 
                 int option = Convert.ToInt32(Console.ReadLine());
 

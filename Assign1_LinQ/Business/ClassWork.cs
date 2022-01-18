@@ -30,7 +30,7 @@ namespace Assign1_LinQ.Business
         public List<Member> GetMembersByGender(List<Member> members, Gender Gender)
         {
             
-            var ListMemberbyGender = members.Where(m => m.Gender == Gender).ToList();
+            var ListMemberbyGender = members.Where(m => m.Gender == Gender.Male).ToList();
             
             
             return ListMemberbyGender;
@@ -46,8 +46,9 @@ namespace Assign1_LinQ.Business
 
         public Member GetOldestMember(List<Member> members)
         {  
-            members.Sort((m1,m2)=>DateTime.Compare(m1.DateOfBirth,m2.DateOfBirth)); // sort ascending datetime DOB, the first in list is the oldest 
-            return members.ToArray()[0];
+            // sort ascending datetime DOB, the last in list is the oldest 
+            var oldest = members.OrderByDescending(m => m.DateOfBirth).LastOrDefault();
+            return oldest == null ? new Member() : oldest;
             
             
         }
