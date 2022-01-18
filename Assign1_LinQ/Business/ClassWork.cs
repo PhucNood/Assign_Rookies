@@ -47,8 +47,9 @@ namespace Assign1_LinQ.Business
         public Member GetOldestMember(List<Member> members)
         {  
             // sort ascending datetime DOB, the last in list is the oldest 
-           var oldest = members.OrderByDescending(m => m.DateOfBirth).LastOrDefault();
-          
+          //c1 var oldest = members.OrderByDescending(m => m.DateOfBirth).LastOrDefault();
+          //c2 var oldest =(from member in members orderby member.DateOfBirth ascending select member).FirstOrDefault();
+         var oldest = (Member)(from member in members where member.DateOfBirth == members.Max(m => m.DateOfBirth) select member); // c3
             return oldest == null ? new Member() : oldest;
             
             
