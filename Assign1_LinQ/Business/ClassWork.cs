@@ -40,7 +40,8 @@ namespace Assign1_LinQ.Business
         public List<Member> GetMembersByPlace(List<Member> members, string Place)
         {
             List<Member> ListMeberByPlace = (from member in members where member.BirthPlace.ToLower().Equals("ha noi") select member).ToList();
-            
+            //c2
+           // var ListMeberByPlace = members.Where(member => member.BirthPlace.ToLower().Equals("ha noi")).ToList();
             return ListMeberByPlace;
             
         }
