@@ -30,7 +30,7 @@ namespace Assign1.Business
 
             foreach (var member in members)
             {
-                switch (member.Age)
+                switch (member.DateOfBirth.Year)
                 {
                     case 2000: ListEqual2000.Add(member); break;
                     case >2000: ListOver2000.Add(member); break;

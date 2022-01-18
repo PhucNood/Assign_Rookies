@@ -18,9 +18,9 @@ namespace Assign1_LinQ.Business
 
         public List<List<Member>> GetListSplitByAge(List<Member> members)
         {
-            List<Member> ListEqual2000 = (from member in members where member.Age==2000 select member).ToList();
-            List<Member> ListUnder2000 = (from member in members where member.Age<2000 select member).ToList();
-            List<Member> ListOver2000 = (from member in members where member.Age>2000 select member).ToList();
+            List<Member> ListEqual2000 = (from member in members where member.DateOfBirth.Year==2000 select member).ToList();
+            List<Member> ListUnder2000 = (from member in members where member.DateOfBirth.Year<2000 select member).ToList();
+            List<Member> ListOver2000 = (from member in members where member.DateOfBirth.Year>2000 select member).ToList();
 
            
 
@@ -47,7 +47,8 @@ namespace Assign1_LinQ.Business
         public Member GetOldestMember(List<Member> members)
         {  
             // sort ascending datetime DOB, the last in list is the oldest 
-            var oldest = members.OrderByDescending(m => m.DateOfBirth).LastOrDefault();
+           var oldest = members.OrderByDescending(m => m.DateOfBirth).LastOrDefault();
+          
             return oldest == null ? new Member() : oldest;
             
             

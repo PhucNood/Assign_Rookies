@@ -44,6 +44,16 @@ namespace Assign1_LinQ
                 BirthPlace = "Lang Son",
                 PhoneNumber = "084227227"
             });
+            ListMember.Add(new Member()
+            {
+                FirstName = "Hoa",
+                LastName = "Dao",
+                Gender = Gender.Female,
+                DateOfBirth = new DateTime(2004, 4, 4),
+                IsGraduated = true,
+                BirthPlace = "Lao Cai",
+                PhoneNumber = "084222327"
+            });
             return ListMember;
 
 
@@ -62,7 +72,9 @@ namespace Assign1_LinQ
                 Console.WriteLine("3. Return a new list that contains Full Name only");
                 Console.WriteLine("4.  Return 3 lists");
                 Console.WriteLine("5.  Return the first person who was born in Ha Noi");
-                Console.WriteLine("Enter your choice: ");
+                Console.WriteLine("0.  Exit");
+                System.Console.WriteLine();
+                Console.Write("Enter your choice: ");
                 
 
                 int option = Convert.ToInt32(Console.ReadLine());
@@ -104,9 +116,9 @@ namespace Assign1_LinQ
                             // cl.SlitMembersByBirthYear();
                             foreach (var list in Working.GetListSplitByAge(ListMember))
                             {
-                                Console.WriteLine("___________________________________");
+                               
                                 Working.PrintList(list);
-                                Console.WriteLine("___________________________________");
+                                Console.WriteLine("_________________________________________________________________");
                             }
                             break;
 

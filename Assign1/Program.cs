@@ -62,9 +62,9 @@ namespace Assign1
                 Console.WriteLine("4.  Return 3 lists");
                 Console.WriteLine("5.  Return the first person who was born in Ha Noi");
                 Console.WriteLine("0. Eixt");
-                Console.WriteLine("Enter your choice: ");
+                Console.Write("Enter your choice: ");
 
-                int option = Convert.ToInt32(Console.Read());
+                int option = Convert.ToInt32(Console.ReadLine());
 
                 switch (option)
                 {
