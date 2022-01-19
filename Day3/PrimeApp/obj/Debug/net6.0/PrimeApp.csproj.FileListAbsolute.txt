@@ -1,0 +1,15 @@
+D:\Rookies4\Day3\PrimeApp\bin\Debug\net6.0\PrimeApp.exe
+D:\Rookies4\Day3\PrimeApp\bin\Debug\net6.0\PrimeApp.deps.json
+D:\Rookies4\Day3\PrimeApp\bin\Debug\net6.0\PrimeApp.runtimeconfig.json
+D:\Rookies4\Day3\PrimeApp\bin\Debug\net6.0\PrimeApp.dll
+D:\Rookies4\Day3\PrimeApp\bin\Debug\net6.0\ref\PrimeApp.dll
+D:\Rookies4\Day3\PrimeApp\bin\Debug\net6.0\PrimeApp.pdb
+D:\Rookies4\Day3\PrimeApp\obj\Debug\net6.0\PrimeApp.csproj.AssemblyReference.cache
+D:\Rookies4\Day3\PrimeApp\obj\Debug\net6.0\PrimeApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\Rookies4\Day3\PrimeApp\obj\Debug\net6.0\PrimeApp.AssemblyInfoInputs.cache
+D:\Rookies4\Day3\PrimeApp\obj\Debug\net6.0\PrimeApp.AssemblyInfo.cs
+D:\Rookies4\Day3\PrimeApp\obj\Debug\net6.0\PrimeApp.csproj.CoreCompileInputs.cache
+D:\Rookies4\Day3\PrimeApp\obj\Debug\net6.0\PrimeApp.dll
+D:\Rookies4\Day3\PrimeApp\obj\Debug\net6.0\ref\PrimeApp.dll
+D:\Rookies4\Day3\PrimeApp\obj\Debug\net6.0\PrimeApp.pdb
+D:\Rookies4\Day3\PrimeApp\obj\Debug\net6.0\PrimeApp.genruntimeconfig.cache

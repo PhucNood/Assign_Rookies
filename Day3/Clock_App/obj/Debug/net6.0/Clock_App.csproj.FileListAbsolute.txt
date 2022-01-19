@@ -1,0 +1,15 @@
+D:\Rookies4\Day3\Clock_App\obj\Debug\net6.0\Clock_App.csproj.AssemblyReference.cache
+D:\Rookies4\Day3\Clock_App\obj\Debug\net6.0\Clock_App.GeneratedMSBuildEditorConfig.editorconfig
+D:\Rookies4\Day3\Clock_App\obj\Debug\net6.0\Clock_App.AssemblyInfoInputs.cache
+D:\Rookies4\Day3\Clock_App\obj\Debug\net6.0\Clock_App.AssemblyInfo.cs
+D:\Rookies4\Day3\Clock_App\obj\Debug\net6.0\Clock_App.csproj.CoreCompileInputs.cache
+D:\Rookies4\Day3\Clock_App\bin\Debug\net6.0\Clock_App.exe
+D:\Rookies4\Day3\Clock_App\bin\Debug\net6.0\Clock_App.deps.json
+D:\Rookies4\Day3\Clock_App\bin\Debug\net6.0\Clock_App.runtimeconfig.json
+D:\Rookies4\Day3\Clock_App\bin\Debug\net6.0\Clock_App.dll
+D:\Rookies4\Day3\Clock_App\bin\Debug\net6.0\ref\Clock_App.dll
+D:\Rookies4\Day3\Clock_App\bin\Debug\net6.0\Clock_App.pdb
+D:\Rookies4\Day3\Clock_App\obj\Debug\net6.0\Clock_App.dll
+D:\Rookies4\Day3\Clock_App\obj\Debug\net6.0\ref\Clock_App.dll
+D:\Rookies4\Day3\Clock_App\obj\Debug\net6.0\Clock_App.pdb
+D:\Rookies4\Day3\Clock_App\obj\Debug\net6.0\Clock_App.genruntimeconfig.cache
