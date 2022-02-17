@@ -1,0 +1,10 @@
+@model List<String>;
+
+@{
+    ViewData["Title"] = "GetFullNamePeople";
+}
+<h1>List full name</h1>
+@foreach (var item in Model)
+{
+    <h4>@item</h4>
+}
