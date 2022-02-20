@@ -1,0 +1,82 @@
+@model IEnumerable<Person>;
+
+@{
+    ViewData["Title"] = "Work";
+}
+
+
+@Html.ActionLink("List Male", "GetPeopleByGender") ||
+@Html.ActionLink("List Full Name", "GetFullNamePeople")||
+@Html.ActionLink("List Ha Noi", "GetPeopleByPlace") ||
+@Html.ActionLink("List Equals 2000", "GetListPeopleByAge","Home",new {option = 0}) ||
+@Html.ActionLink("List Equals 2000", "GetListPeopleByAge","Home",new {option = 1})||
+@Html.ActionLink("List Equals 2000", "GetListPeopleByAge","Home",new {option = 2}) ||
+<br>
+
+<a class="btn btn-primary " asp-action="Create" role="button">Create new Person</a> 
+
+<table class="table">
+    <thead>
+        <tr>
+             <th>
+                @Html.DisplayNameFor(model => model.ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>
+            <th>
+                   @Html.DisplayNameFor(model => model.DateOfBirth)
+            </th>
+             <th>
+                   @Html.DisplayNameFor(model => model.PhoneNumber)
+            </th>
+             <th>
+                   @Html.DisplayNameFor(model => model.BirthAdress)
+            </th>
+            <th>
+                   @Html.DisplayNameFor(model => model.IsGraduated)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfBirth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BirthAdress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsGraduated)
+            </td>
+     <td>
+          @Html.ActionLink("Edit", "Edit", "Home", new { id = item.ID }) |
+               
+                @Html.ActionLink("Delete", "Delete", "Home", new { id= item.ID } , new { onclick = "return confirm('Are you sure?')"})
+     </td>
+        </tr>
+}
+    </tbody>
+</table>
