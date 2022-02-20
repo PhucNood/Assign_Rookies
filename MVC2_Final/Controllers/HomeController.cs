@@ -4,8 +4,8 @@ using MVC2_Final.Models;
 using MVC2_Final.Services;
 using System.IO;
 using System.Data;
-using System.Collections.Generic;
-using ClosedXML.Excel;
+
+
 
 namespace MVC2_Final.Controllers;
 
@@ -107,8 +107,7 @@ public IActionResult GetListPeopleByAge(int? option)
     {
         if(ModelState.IsValid){
                 person.ID = list.Max(person=>person.ID) +1;
-                list.Add(new Person{ID=person.ID, FirstName=person.FirstName, LastName=person.LastName,
-                Gender=person.Gender, DateOfBirth=person.DateOfBirth,BirthAdress=person.BirthAdress,IsGraduated =person.IsGraduated});
+                list.Add(person);
                 return RedirectToAction("Work");
 
         }

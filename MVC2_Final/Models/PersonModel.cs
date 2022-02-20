@@ -21,7 +21,7 @@ namespace MVC2_Final.Models
          [Required(ErrorMessage = "Required.")]
         public DateTime DateOfBirth { get; set; }
          [Required(ErrorMessage = "Required.")]
-        [RegularExpression(@"\\d{10}",ErrorMessage="Invalid Phone Number!")]
+     
         public string PhoneNumber { get; set; }
          [Required(ErrorMessage = "Required.")]
         public string BirthAdress { get; set; }
