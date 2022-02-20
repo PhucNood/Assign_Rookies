@@ -24,3 +24,13 @@ D:\Rookies4\MVC2_Final\obj\Debug\net6.0\MVC2_Final.dll
 D:\Rookies4\MVC2_Final\obj\Debug\net6.0\ref\MVC2_Final.dll
 D:\Rookies4\MVC2_Final\obj\Debug\net6.0\MVC2_Final.pdb
 D:\Rookies4\MVC2_Final\obj\Debug\net6.0\MVC2_Final.genruntimeconfig.cache
+D:\Rookies4\MVC2_Final\bin\Debug\net6.0\ClosedXML.dll
+D:\Rookies4\MVC2_Final\bin\Debug\net6.0\DocumentFormat.OpenXml.dll
+D:\Rookies4\MVC2_Final\bin\Debug\net6.0\ExcelNumberFormat.dll
+D:\Rookies4\MVC2_Final\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Rookies4\MVC2_Final\bin\Debug\net6.0\System.Drawing.Common.dll
+D:\Rookies4\MVC2_Final\bin\Debug\net6.0\System.IO.Packaging.dll
+D:\Rookies4\MVC2_Final\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.0\Microsoft.Win32.SystemEvents.dll
+D:\Rookies4\MVC2_Final\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.0\System.Drawing.Common.dll
+D:\Rookies4\MVC2_Final\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.0\System.Drawing.Common.dll
+D:\Rookies4\MVC2_Final\obj\Debug\net6.0\MVC2_Final.csproj.CopyComplete

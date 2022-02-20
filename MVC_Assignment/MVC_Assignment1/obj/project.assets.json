@@ -4782,11 +4782,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\AssignmentC#\\MVC_Assignment\\MVC_Assignment1\\MVC_Assignment1.csproj",
+      "projectUniqueName": "d:\\Rookies4\\MVC_Assignment\\MVC_Assignment1\\MVC_Assignment1.csproj",
       "projectName": "MVC_Assignment1",
-      "projectPath": "D:\\AssignmentC#\\MVC_Assignment\\MVC_Assignment1\\MVC_Assignment1.csproj",
+      "projectPath": "d:\\Rookies4\\MVC_Assignment\\MVC_Assignment1\\MVC_Assignment1.csproj",
       "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-      "outputPath": "D:\\AssignmentC#\\MVC_Assignment\\MVC_Assignment1\\obj\\",
+      "outputPath": "d:\\Rookies4\\MVC_Assignment\\MVC_Assignment1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4838,7 +4838,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

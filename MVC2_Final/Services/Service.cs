@@ -11,6 +11,8 @@ namespace MVC2_Final.Services
 {
     public class Serviece : IService
     {
+       
+
         public List<string> GetFullNamePeople(List<Person> OriginList)
         {
             return (from person in OriginList select(person.FirstName+" "+person.LastName)).ToList();

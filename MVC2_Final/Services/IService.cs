@@ -5,10 +5,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+
 namespace MVC2_Final.Services
 {
+
    public interface IService
     {
+        
         public List<Person> GetPeopleByGender(List<Person> OriginList,Gender Gender);
         public Person GetOldestPerson(List<Person> OriginList);
         public List<string> GetFullNamePeople(List<Person> OriginList);
