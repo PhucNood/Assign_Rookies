@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace MVC3_Assignment.Services
 {
-    public class Serviece : IService
+    public class Service : IService
     {
-        
-        public static  List<Person> list = new List<Person> {
+
+        public static List<Person> list = new List<Person> {
               new Person{ID=1,FirstName = "Phuc",LastName="Nguyen",Gender=Gender.Male, DateOfBirth=new DateTime(2000,7,7)
               ,BirthAdress="Hai Duong",PhoneNumber="0966416324",IsGraduated=true},
                 new Person{ID=2,FirstName = "Huyen",LastName="Nguyen",Gender=Gender.Female, DateOfBirth=new DateTime(2000,2,16)
@@ -25,15 +25,16 @@ namespace MVC3_Assignment.Services
               ,BirthAdress="Lang Son",PhoneNumber="0912321643",IsGraduated=true}
             };
         public void Create(Person person)
-        { person.ID = list.Max(person=>person.ID) +1;
-           list.Add(person);
+        {
+            person.ID = list.Max(person => person.ID) + 1;
+            list.Add(person);
         }
 
         public void Delete(int id)
         {
             var person = list.FirstOrDefault(x => x.ID == id);
-            if(person != null) list.Remove(person);
-            
+            if (person != null) list.Remove(person);
+
         }
 
         public List<Person> GetAll()
@@ -43,13 +44,13 @@ namespace MVC3_Assignment.Services
 
         public void Update(int id, Person person)
         {
-            var EditPerson = list.FirstOrDefault(person=>person.ID==id);
-  EditPerson.FirstName = person.FirstName;
-  EditPerson.LastName = person.LastName;
-  EditPerson.Gender = person.Gender;
-  EditPerson.DateOfBirth =person.DateOfBirth;
-  EditPerson.BirthAdress = person.BirthAdress;
-  EditPerson.IsGraduated = person.IsGraduated;
+            var EditPerson = list.FirstOrDefault(person => person.ID == id);
+            EditPerson.FirstName = person.FirstName;
+            EditPerson.LastName = person.LastName;
+            EditPerson.Gender = person.Gender;
+            EditPerson.DateOfBirth = person.DateOfBirth;
+            EditPerson.BirthAdress = person.BirthAdress;
+            EditPerson.IsGraduated = person.IsGraduated;
         }
     }
 }

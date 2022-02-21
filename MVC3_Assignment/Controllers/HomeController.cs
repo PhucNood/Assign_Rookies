@@ -43,8 +43,9 @@ public class HomeController : Controller
 
         }
 
-        return View();
+        return RedirectToAction("Index");
     }
+    
     public IActionResult Update(int? id)
     {
         var person = _service.GetAll().FirstOrDefault(person => person.ID == id);
@@ -85,12 +86,8 @@ public class HomeController : Controller
 
     public IActionResult Detail(int id)
     {
-
-
         var person = _service.GetAll().FirstOrDefault(x => x.ID == id);
-        
         return View(person);
-
     }
 
 
