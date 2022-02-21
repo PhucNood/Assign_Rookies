@@ -75,13 +75,19 @@ public class HomeController : Controller
     public IActionResult Delete(int id)
     {
        var person = _service.GetAll().FirstOrDefault(x => x.ID == id);
+        ViewData["deleted-name"] = person.FirstName+" "+person.LastName;
         _service.Delete(id);
-        HttpContext.Session.SetString("deleted-name",person.FirstName+" "+person.LastName);
+       
+     
 
 
-        return RedirectToAction("Index");
+        return View();
 
     }
+
+  
+
+
 
 
     public IActionResult Detail(int id)

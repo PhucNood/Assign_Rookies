@@ -16298,6 +16298,11 @@
   "RootNamespace": "MVC3_Assignment",
   "Documents": [
     {
+      "FilePath": "d:\\Rookies4\\MVC3_Assignment\\Views\\Home\\ShowDelete.cshtml",
+      "TargetPath": "Views\\Home\\ShowDelete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\Rookies4\\MVC3_Assignment\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
@@ -16330,6 +16335,11 @@
     {
       "FilePath": "d:\\Rookies4\\MVC3_Assignment\\Views\\Home\\Update.cshtml",
       "TargetPath": "Views\\Home\\Update.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Rookies4\\MVC3_Assignment\\Views\\Home\\Delete.cshtml",
+      "TargetPath": "Views\\Home\\Delete.cshtml",
       "FileKind": "mvc"
     },
     {
