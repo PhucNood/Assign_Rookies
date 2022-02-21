@@ -42,15 +42,19 @@ namespace MVC3_Assignment.Services
             return list;
         }
 
-        public void Update(int id, Person person)
+        public void Update(Person person)
         {
-            var EditPerson = list.FirstOrDefault(person => person.ID == id);
-            EditPerson.FirstName = person.FirstName;
-            EditPerson.LastName = person.LastName;
-            EditPerson.Gender = person.Gender;
-            EditPerson.DateOfBirth = person.DateOfBirth;
-            EditPerson.BirthAdress = person.BirthAdress;
-            EditPerson.IsGraduated = person.IsGraduated;
+            var EditPerson = list.FirstOrDefault(p => p.ID == person.ID);
+            if (EditPerson != null)
+            {
+                EditPerson.FirstName = person.FirstName;
+                EditPerson.LastName = person.LastName;
+                EditPerson.Gender = person.Gender;
+                EditPerson.DateOfBirth = person.DateOfBirth;
+                EditPerson.PhoneNumber = person.PhoneNumber;
+                EditPerson.BirthAdress = person.BirthAdress;
+                EditPerson.IsGraduated = person.IsGraduated;
+            }
         }
     }
 }

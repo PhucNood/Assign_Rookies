@@ -62,7 +62,7 @@ public class HomeController : Controller
         if (ModelState.IsValid)
         {
 
-            _service.Update(id, person);
+            _service.Update( person);
 
         }
 

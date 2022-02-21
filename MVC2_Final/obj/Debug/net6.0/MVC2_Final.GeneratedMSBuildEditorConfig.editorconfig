@@ -8,69 +8,69 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MVC2_Final
 build_property.RootNamespace = MVC2_Final
-build_property.ProjectDir = D:\Rookies4\MVC2_Final\
+build_property.ProjectDir = d:\Rookies4\MVC2_Final\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Rookies4\MVC2_Final
+build_property.MSBuildProjectDirectory = d:\Rookies4\MVC2_Final
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Rookies4/MVC2_Final/Views/Home/Create.cshtml]
+[d:/Rookies4/MVC2_Final/Views/Home/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Rookies4/MVC2_Final/Views/Home/Edit.cshtml]
+[d:/Rookies4/MVC2_Final/Views/Home/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Rookies4/MVC2_Final/Views/Home/GetFullNamePeople.cshtml]
+[d:/Rookies4/MVC2_Final/Views/Home/GetFullNamePeople.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHZXRGdWxsTmFtZVBlb3BsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Rookies4/MVC2_Final/Views/Home/GetListPeopleByAge.cshtml]
+[d:/Rookies4/MVC2_Final/Views/Home/GetListPeopleByAge.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHZXRMaXN0UGVvcGxlQnlBZ2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Rookies4/MVC2_Final/Views/Home/GetOldestPerson.cshtml]
+[d:/Rookies4/MVC2_Final/Views/Home/GetOldestPerson.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHZXRPbGRlc3RQZXJzb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Rookies4/MVC2_Final/Views/Home/GetPeopleByGender.cshtml]
+[d:/Rookies4/MVC2_Final/Views/Home/GetPeopleByGender.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHZXRQZW9wbGVCeUdlbmRlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Rookies4/MVC2_Final/Views/Home/GetPeopleByPlace.cshtml]
+[d:/Rookies4/MVC2_Final/Views/Home/GetPeopleByPlace.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHZXRQZW9wbGVCeVBsYWNlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Rookies4/MVC2_Final/Views/Home/Index.cshtml]
+[d:/Rookies4/MVC2_Final/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Rookies4/MVC2_Final/Views/Home/Privacy.cshtml]
+[d:/Rookies4/MVC2_Final/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Rookies4/MVC2_Final/Views/Home/Work.cshtml]
+[d:/Rookies4/MVC2_Final/Views/Home/Work.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxXb3JrLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Rookies4/MVC2_Final/Views/Shared/Error.cshtml]
+[d:/Rookies4/MVC2_Final/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Rookies4/MVC2_Final/Views/Shared/_ValidationScriptsPartial.cshtml]
+[d:/Rookies4/MVC2_Final/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Rookies4/MVC2_Final/Views/_ViewImports.cshtml]
+[d:/Rookies4/MVC2_Final/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Rookies4/MVC2_Final/Views/_ViewStart.cshtml]
+[d:/Rookies4/MVC2_Final/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Rookies4/MVC2_Final/Views/Shared/_Layout.cshtml]
+[d:/Rookies4/MVC2_Final/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-ntido11xp0

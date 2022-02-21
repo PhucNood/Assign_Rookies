@@ -12,7 +12,7 @@ namespace MVC3_Assignment.Services
    public interface IService
     {
         public void Create(Person person);
-        public void Update(int id,Person person);
+        public void Update(Person person);
 
         public void Delete(int id);
 

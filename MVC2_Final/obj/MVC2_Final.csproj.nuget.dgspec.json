@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Rookies4\\MVC2_Final\\MVC2_Final.csproj": {}
+    "d:\\Rookies4\\MVC2_Final\\MVC2_Final.csproj": {}
   },
   "projects": {
-    "D:\\Rookies4\\MVC2_Final\\MVC2_Final.csproj": {
+    "d:\\Rookies4\\MVC2_Final\\MVC2_Final.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Rookies4\\MVC2_Final\\MVC2_Final.csproj",
+        "projectUniqueName": "d:\\Rookies4\\MVC2_Final\\MVC2_Final.csproj",
         "projectName": "MVC2_Final",
-        "projectPath": "D:\\Rookies4\\MVC2_Final\\MVC2_Final.csproj",
+        "projectPath": "d:\\Rookies4\\MVC2_Final\\MVC2_Final.csproj",
         "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-        "outputPath": "D:\\Rookies4\\MVC2_Final\\obj\\",
+        "outputPath": "d:\\Rookies4\\MVC2_Final\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
