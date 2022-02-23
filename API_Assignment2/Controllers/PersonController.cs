@@ -38,14 +38,14 @@ namespace API_Assignment2.Controllers
             return _personService.FilterListByGender(gender);
         }
 
-        [HttpGet("/api/filtered-name-people/{name}")]
+        [HttpGet("/api/filtered-name-people")]
         public IEnumerable<Person> GetPeopleByName(string name)
         {
             return _personService.FilterListByName(name);
         }
 
 
-        [HttpGet("/api/filtered-place-people/{place}")]
+        [HttpGet("/api/filtered-place-people")]
         public IEnumerable<Person> GetGetPeopleByPlace(string placeName)
         {
             return _personService.FilterListByPlace(placeName);

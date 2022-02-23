@@ -11,6 +11,9 @@ namespace API_Assignment1.Services
         public void DeleteTask(int id);
 
         public void EditTask(TaskModel task);
+
+        public void AddTasks(List<TaskModel> tasks);
+        public void DeleteTasks(int[] ids);
     }
 
 }

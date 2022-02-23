@@ -213,11 +213,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\AssignmentC#\\API_Assignment1\\API_Assignment1.csproj",
+      "projectUniqueName": "d:\\Rookies4\\API_Assignment1\\API_Assignment1.csproj",
       "projectName": "API_Assignment1",
-      "projectPath": "D:\\AssignmentC#\\API_Assignment1\\API_Assignment1.csproj",
+      "projectPath": "d:\\Rookies4\\API_Assignment1\\API_Assignment1.csproj",
       "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-      "outputPath": "D:\\AssignmentC#\\API_Assignment1\\obj\\",
+      "outputPath": "d:\\Rookies4\\API_Assignment1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",

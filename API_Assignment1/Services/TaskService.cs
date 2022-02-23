@@ -10,6 +10,15 @@ namespace API_Assignment1.Services
         new TaskModel{Id=4,Title="Task 4",IsCompleted=false},
         new TaskModel{Id=5,Title="Task 5",IsCompleted=true}};
 
+        public void AddTasks(List<TaskModel> tasks)
+        {
+           foreach (var t in tasks)
+            {
+                t.Id = Tasks.Max(t => t.Id)+1;
+            }
+            Tasks.AddRange(tasks);
+        }
+
         public void CreateTask(TaskModel task)
         {
             task.Id = Tasks.Max(task => task.Id)+1;
@@ -20,6 +29,11 @@ namespace API_Assignment1.Services
         {
             var task = Tasks.FirstOrDefault(t => t.Id == id);
             if(task != null) Tasks.Remove(task);
+        }
+
+        public void DeleteTasks(int[] ids)
+        {
+             Tasks.RemoveAll(task=> ids.Contains(task.Id));
         }
 
         public void EditTask(TaskModel task)
