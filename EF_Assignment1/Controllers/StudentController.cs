@@ -58,7 +58,7 @@ public class StudentController : ControllerBase
     {
 
         if(ModelState.IsValid){
-            _studentService.Create(student);
+            _studentService.Update(student);
             return HttpStatusCode.OK;
         }
            return HttpStatusCode.BadRequest;

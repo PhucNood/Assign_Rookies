@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Rookies4\\assign1\\Assign1.csproj": {}
+    "D:\\Rookies4\\Assign1\\Assign1.csproj": {}
   },
   "projects": {
-    "D:\\Rookies4\\assign1\\Assign1.csproj": {
+    "D:\\Rookies4\\Assign1\\Assign1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Rookies4\\assign1\\Assign1.csproj",
+        "projectUniqueName": "D:\\Rookies4\\Assign1\\Assign1.csproj",
         "projectName": "Assign1",
-        "projectPath": "D:\\Rookies4\\assign1\\Assign1.csproj",
+        "projectPath": "D:\\Rookies4\\Assign1\\Assign1.csproj",
         "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-        "outputPath": "D:\\Rookies4\\assign1\\obj\\",
+        "outputPath": "D:\\Rookies4\\Assign1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -54,7 +54,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
