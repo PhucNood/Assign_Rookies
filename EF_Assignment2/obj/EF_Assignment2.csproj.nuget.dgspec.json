@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\AssignmentC#\\EF_Assignment2\\EF_Assignment2.csproj": {}
+    "D:\\Rookies4\\EF_Assignment2\\EF_Assignment2.csproj": {}
   },
   "projects": {
-    "D:\\AssignmentC#\\EF_Assignment2\\EF_Assignment2.csproj": {
+    "D:\\Rookies4\\EF_Assignment2\\EF_Assignment2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\AssignmentC#\\EF_Assignment2\\EF_Assignment2.csproj",
+        "projectUniqueName": "D:\\Rookies4\\EF_Assignment2\\EF_Assignment2.csproj",
         "projectName": "EF_Assignment2",
-        "projectPath": "D:\\AssignmentC#\\EF_Assignment2\\EF_Assignment2.csproj",
+        "projectPath": "D:\\Rookies4\\EF_Assignment2\\EF_Assignment2.csproj",
         "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-        "outputPath": "D:\\AssignmentC#\\EF_Assignment2\\obj\\",
+        "outputPath": "D:\\Rookies4\\EF_Assignment2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",

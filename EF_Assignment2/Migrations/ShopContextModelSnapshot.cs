@@ -69,7 +69,7 @@ namespace EF_Assignment2.Migrations
                     b.HasOne("EF_Assignment2.Entities.CategoryEntity", "Category")
                         .WithMany("Products")
                         .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.SetNull);
                         
 
                     b.Navigation("Category");

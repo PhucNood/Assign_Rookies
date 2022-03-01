@@ -2083,11 +2083,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\AssignmentC#\\EF_Assignment2\\EF_Assignment2.csproj",
+      "projectUniqueName": "d:\\Rookies4\\EF_Assignment2\\EF_Assignment2.csproj",
       "projectName": "EF_Assignment2",
-      "projectPath": "D:\\AssignmentC#\\EF_Assignment2\\EF_Assignment2.csproj",
+      "projectPath": "d:\\Rookies4\\EF_Assignment2\\EF_Assignment2.csproj",
       "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-      "outputPath": "D:\\AssignmentC#\\EF_Assignment2\\obj\\",
+      "outputPath": "d:\\Rookies4\\EF_Assignment2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Rookies4\\MVC3_Assignment_Test\\MVC3_Assignment\\MVC3_Assignment.csproj": {}
+    "d:\\Rookies4\\MVC3_Assignment_Test\\MVC3_Assignment\\MVC3_Assignment.csproj": {}
   },
   "projects": {
-    "D:\\Rookies4\\MVC3_Assignment_Test\\MVC3_Assignment\\MVC3_Assignment.csproj": {
+    "d:\\Rookies4\\MVC3_Assignment_Test\\MVC3_Assignment\\MVC3_Assignment.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Rookies4\\MVC3_Assignment_Test\\MVC3_Assignment\\MVC3_Assignment.csproj",
+        "projectUniqueName": "d:\\Rookies4\\MVC3_Assignment_Test\\MVC3_Assignment\\MVC3_Assignment.csproj",
         "projectName": "MVC3_Assignment",
-        "projectPath": "D:\\Rookies4\\MVC3_Assignment_Test\\MVC3_Assignment\\MVC3_Assignment.csproj",
+        "projectPath": "d:\\Rookies4\\MVC3_Assignment_Test\\MVC3_Assignment\\MVC3_Assignment.csproj",
         "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-        "outputPath": "D:\\Rookies4\\MVC3_Assignment_Test\\MVC3_Assignment\\obj\\",
+        "outputPath": "d:\\Rookies4\\MVC3_Assignment_Test\\MVC3_Assignment\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
