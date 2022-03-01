@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC3_Assignment", "MVC3_Assignment\MVC3_Assignment.csproj", "{0A8C5E66-75BE-4031-B8DF-E7B8233ACB6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC3_Test", "MVC3_Test\MVC3_Test.csproj", "{FA6D9E5E-961B-4EAD-91B0-925C3786C611}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0A8C5E66-75BE-4031-B8DF-E7B8233ACB6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A8C5E66-75BE-4031-B8DF-E7B8233ACB6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A8C5E66-75BE-4031-B8DF-E7B8233ACB6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A8C5E66-75BE-4031-B8DF-E7B8233ACB6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC1D3318-B046-4296-A4E6-DC6C444BE576}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC1D3318-B046-4296-A4E6-DC6C444BE576}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC1D3318-B046-4296-A4E6-DC6C444BE576}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC1D3318-B046-4296-A4E6-DC6C444BE576}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE7A03F8-17E1-4F19-960A-63F55FE52F80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE7A03F8-17E1-4F19-960A-63F55FE52F80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE7A03F8-17E1-4F19-960A-63F55FE52F80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE7A03F8-17E1-4F19-960A-63F55FE52F80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA6D9E5E-961B-4EAD-91B0-925C3786C611}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA6D9E5E-961B-4EAD-91B0-925C3786C611}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA6D9E5E-961B-4EAD-91B0-925C3786C611}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA6D9E5E-961B-4EAD-91B0-925C3786C611}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

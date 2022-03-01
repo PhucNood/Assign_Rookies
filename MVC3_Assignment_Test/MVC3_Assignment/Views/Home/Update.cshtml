@@ -1,0 +1,55 @@
+@model MVC3_Assignment.Models.Person;
+@{
+    ViewData["title"] ="Update";
+
+}
+
+@{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+<h2>New Person information</h2>
+
+<form asp-controller="Home" asp-action="Update">
+   
+   <div class="form-group">
+        <label>First name:</label>
+        <input class="form-control" placeholder="Enter firstname" id="firstname" asp-for="FirstName"/>
+        <span asp-validation-for="FirstName"></span>
+    </div>
+    <div class="form-group">
+        <label>Last name:</label>
+        <input class="form-control" placeholder="Enter lastname" id="lastname" asp-for="LastName"/>
+        <span asp-validation-for="FirstName"></span>
+    </div>
+    <div class="form-group">
+        <label>Gender:</label>
+        <select asp-for="Gender"
+                asp-items="Html.GetEnumSelectList<Gender>()" id="gender">
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Date of Birth:</label>
+        <input class="form-control" placeholder="Enter birthday" id="birth" asp-for="DateOfBirth" type="date"  />
+        <span asp-validation-for="DateOfBirth"></span>
+    </div>
+    <div class="form-group">
+        <label>Phone Number:</label>
+        <input class="form-control" placeholder="Enter birthday" id="phone" asp-for="PhoneNumber"/>
+        <span asp-validation-for="PhoneNumber"></span>
+    </div>
+
+    <div class="form-group">
+        <label>BirthAdress:</label>
+        <input class="form-control" placeholder="Enter phone" id="phone" asp-for="BirthAdress"/>
+        <span asp-validation-for="BirthAdress"></span>
+    </div>
+    <div class="form-group">
+        <label>Graduated:</label>
+        <input asp-for="IsGraduated" id="graduated"/>
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

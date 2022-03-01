@@ -4,6 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.IO;
+using System.Data;
+using ClosedXML.Excel;
 
 
 namespace MVC2_Final.Services
@@ -11,13 +14,18 @@ namespace MVC2_Final.Services
 
    public interface IService
     {
-        
-        public List<Person> GetPeopleByGender(List<Person> OriginList,Gender Gender);
-        public Person GetOldestPerson(List<Person> OriginList);
-        public List<string> GetFullNamePeople(List<Person> OriginList);
-        public List<List<Person>> GetListPeopleByAge(List<Person> OriginList);
+        public List<Person> GetAllPeople();
+        public List<Person> GetPeopleByGender(Gender Gender);
+        public Person GetOldestPerson();
+        public List<string> GetFullNamePeople();
+        public List<List<Person>> GetListPeopleByAge();
+         public List<Person> GetPeopleByPlace(string Place);
+         public byte[] Export();
 
-         public List<Person> GetPeopleByPlace(List<Person> OriginList,string Place);
+         public void Create(Person person);
+         public void Edit(Person person);
+
+         public void Delete(int? id);
        
     }
 }
