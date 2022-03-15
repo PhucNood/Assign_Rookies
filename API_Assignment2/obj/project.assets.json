@@ -2537,11 +2537,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Rookies4\\API_Assignment2\\API_Assignment2.csproj",
+      "projectUniqueName": "d:\\Rookies4\\API_Assignment2\\API_Assignment2.csproj",
       "projectName": "API_Assignment2",
-      "projectPath": "D:\\Rookies4\\API_Assignment2\\API_Assignment2.csproj",
+      "projectPath": "d:\\Rookies4\\API_Assignment2\\API_Assignment2.csproj",
       "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-      "outputPath": "D:\\Rookies4\\API_Assignment2\\obj\\",
+      "outputPath": "d:\\Rookies4\\API_Assignment2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2623,7 +2623,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }

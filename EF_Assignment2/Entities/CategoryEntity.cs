@@ -2,7 +2,6 @@
 using System.Collections;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
-
 namespace EF_Assignment2.Entities
 {
     public class CategoryEntity

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "y4Nc2Ws9vA82+FvrW+Y16fpqhFjsSPJJPzPJNSYSHiTGtH8FIF5u0JCp68wLc277Wq8OYWiqcJrztR3Ngi+iLw==",
+  "dgSpecHash": "gv1hpdIzuc3381gy4BPsDzTOUzBMBCkByFwZfKmVRie5Tz4EgO40+bZAxu1JlKB/Qf+oPoDvN5zrt9Q7z3fkiQ==",
   "success": true,
-  "projectFilePath": "D:\\Rookies4\\EF_Assignment2\\EF_Assignment2.csproj",
+  "projectFilePath": "d:\\Rookies4\\EF_Assignment2\\EF_Assignment2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ACER\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\ACER\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
