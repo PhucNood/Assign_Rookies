@@ -8,6 +8,7 @@ namespace Back_end.Mapper
         public AutoMapperProfile()
         {
             CreateMap<Book,BookModel>();
+            CreateMap<BookModel,Book>();
         }
     }
 }

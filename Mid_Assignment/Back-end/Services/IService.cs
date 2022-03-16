@@ -11,6 +11,12 @@ namespace Back_end.Services
 
         public void Remove(T item);
 
+        public bool Existed(int id);
+
+        public bool IsIncorrectFK(T item);
+
+        public void Transact(Action<T> action,T item); //Action same void delegate
+
 
         
     }
