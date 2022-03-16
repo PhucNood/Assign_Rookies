@@ -68,8 +68,7 @@ namespace Back_end.Services
                 _transaction.Commit();
             }
             catch (System.Exception)
-            {
-                
+            {               
                _transaction.Rollback();
             }
         }

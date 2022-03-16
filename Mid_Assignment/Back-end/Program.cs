@@ -22,7 +22,9 @@ service.AddDbContext<LibraryContext>(
 
 service.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 service.AddTransient<IService<Book>,BookService>();
-
+service.AddTransient<IService<Category>,CategoryService>();
+service.AddTransient<IService<User>,UserService>();
+service.AddTransient<IService<BookBorrowingRequest>,RequestService>();
 var app = builder.Build();
 
 

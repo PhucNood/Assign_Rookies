@@ -7,8 +7,14 @@ namespace Back_end.Mapper
     {
         public AutoMapperProfile()
         {
-            CreateMap<Book,BookModel>();
-            CreateMap<BookModel,Book>();
+            CreateMap<Book, BookModel>();
+            CreateMap<BookModel, Book>();
+            CreateMap<User, BookModel>();
+            CreateMap<UserModel, User>();
+            CreateMap<BookBorrowingRequest, BookBorrowingRequestModel>();
+            CreateMap<BookBorrowingRequestModel, BookBorrowingRequest>();
+            CreateMap<Category, CategoryModel>();
+            CreateMap<CategoryModel, Category>();
         }
     }
 }
