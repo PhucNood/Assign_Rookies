@@ -20,6 +20,7 @@ namespace Back_end.Controllers
 
         [HttpGet("api/BookBorrowingRequests")]
         [ProducesResponseType(200, Type = typeof(IEnumerable<BookBorrowingRequestModel>))]
+         [ProducesResponseType(404)]
         public IActionResult GetbookBorrowingRequest()
         {
             var bookBorrowingRequest = _mapper.Map<List<BookBorrowingRequestModel>>(_bookBorrowingRequestService.GetAll());
@@ -29,6 +30,7 @@ namespace Back_end.Controllers
 
         [HttpGet("api/BookBorrowingRequest")]
     [ProducesResponseType(200, Type = typeof(BookBorrowingRequestModel))]
+    [ProducesResponseType(404)]
 
     public IActionResult GetbookBorrowingRequest(int id)
     {
@@ -44,6 +46,11 @@ namespace Back_end.Controllers
     public IActionResult PostbookBorrowingRequest(BookBorrowingRequestModel bookBorrowingRequestModel)
     {
        var bookBorrowingRequest = _mapper.Map<BookBorrowingRequest>(bookBorrowingRequestModel);
+
+       if(!_bookBorrowingRequestService.IsIncorrectFK(bookBorrowingRequest)) {
+        ModelState.AddModelError("InvalidFK","May be Invalid some foreign key ");
+        return StatusCode(422,ModelState);
+      }
 
       if(bookBorrowingRequestModel == null) return BadRequest(ModelState);
       

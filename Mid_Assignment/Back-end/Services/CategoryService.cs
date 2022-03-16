@@ -33,7 +33,7 @@ namespace Back_end.Services
 
         public Category GetById(int id)
         {
-            throw new NotImplementedException();
+           return GetAll().FirstOrDefault(c => c.Id == id);
         }
 
         public bool IsIncorrectFK(Category item)

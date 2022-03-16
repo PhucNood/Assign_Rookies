@@ -23,7 +23,7 @@ namespace Back_end.Services
 
         public bool Existed(int id)
         {
-            return _context.Categories.Any(c=>c.Id == id);
+            return _context.Users.Any(u=>u.Id == id);
         }
 
         public ICollection<User> GetAll()
@@ -33,7 +33,7 @@ namespace Back_end.Services
 
         public User GetById(int id)
         {
-            throw new NotImplementedException();
+            return GetAll().FirstOrDefault(book => book.Id == id);
         }
 
         public bool IsIncorrectFK(User item)
