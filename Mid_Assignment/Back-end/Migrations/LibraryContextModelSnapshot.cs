@@ -15,7 +15,6 @@ namespace Back_end.Migrations
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
-            
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "6.0.3")
@@ -45,10 +44,14 @@ namespace Back_end.Migrations
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("PublishedDate")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("RequestId")
+                    b.Property<int>("PublishedYear")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("RequestId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -138,9 +141,7 @@ namespace Back_end.Migrations
 
                     b.HasOne("Back_end.Entities.BookBorrowingRequest", "Request")
                         .WithMany("Books")
-                        .HasForeignKey("RequestId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("RequestId");
 
                     b.Navigation("Category");
 

@@ -1,5 +1,7 @@
 using Back_end.Context;
 using Microsoft.EntityFrameworkCore;
+using Back_end.Services;
+using Back_end.Entities;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -17,7 +19,9 @@ service.AddDbContext<LibraryContext>(
     } 
     
 );
+
 service.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+service.AddTransient<IService<Book>,BookService>();
 
 var app = builder.Build();
 

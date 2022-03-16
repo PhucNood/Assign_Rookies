@@ -12,14 +12,16 @@ public class Book
 
     public string Author { get; set; }
 
-    public DateTime PublishedDate { get; set; }
+    public int PublishedYear { get; set; }
+
+    public string Image { get; set; }
 
     public int CategoryId { get; set; }
 
     public bool Available { get; set; }
-
-
-    public int RequestId { get; set; }
+    
+    
+    public int? RequestId { get; set; } =null;
 
 
     public Category Category { get; set; }

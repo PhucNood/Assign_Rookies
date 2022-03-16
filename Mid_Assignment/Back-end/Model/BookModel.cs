@@ -8,7 +8,11 @@ public class BookModel
 
     public string Author { get; set; }
 
-    public DateTime PublishedDate { get; set; }
+    public int PublishedDate { get; set; }
+
+    public string Image { get; set; }
+
+    public int? RequestId { get; set; } = null;
 
     public int CategoryId { get; set; }
 
