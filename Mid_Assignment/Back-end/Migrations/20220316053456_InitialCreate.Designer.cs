@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Back_end.Migrations
 {
     [DbContext(typeof(LibraryContext))]
-    [Migration("20220316031907_InitialCreate")]
+    [Migration("20220316053456_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,23 +24,6 @@ namespace Back_end.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("Back_end.Entities.Author", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("AuthorName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Authors");
-                });
-
             modelBuilder.Entity("Back_end.Entities.Book", b =>
                 {
                     b.Property<int>("Id")
@@ -49,8 +32,9 @@ namespace Back_end.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("AuthorId")
-                        .HasColumnType("int");
+                    b.Property<string>("Author")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("Available")
                         .HasColumnType("bit");
@@ -59,25 +43,20 @@ namespace Back_end.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CateId")
-                        .HasColumnType("int");
-
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("PublishedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("RequestDetailId")
+                    b.Property<int>("RequestId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AuthorId");
-
                     b.HasIndex("CategoryId");
 
-                    b.HasIndex("RequestDetailId");
+                    b.HasIndex("RequestId");
 
                     b.ToTable("Books");
                 });
@@ -90,11 +69,11 @@ namespace Back_end.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<int>("ApproverID")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("DateOfRequest")
                         .HasColumnType("datetime2");
-
-                    b.Property<int>("DetailID")
-                        .HasColumnType("int");
 
                     b.Property<int>("Status")
                         .HasColumnType("int");
@@ -104,24 +83,9 @@ namespace Back_end.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DetailID");
-
                     b.HasIndex("UserId");
 
                     b.ToTable("BookBorrowingRequests");
-                });
-
-            modelBuilder.Entity("Back_end.Entities.BookeBorrowingRequestDetails", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("BookeBorrowingRequestDetails");
                 });
 
             modelBuilder.Entity("Back_end.Entities.Category", b =>
@@ -167,60 +131,37 @@ namespace Back_end.Migrations
 
             modelBuilder.Entity("Back_end.Entities.Book", b =>
                 {
-                    b.HasOne("Back_end.Entities.Author", "Author")
-                        .WithMany("Books")
-                        .HasForeignKey("AuthorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Back_end.Entities.Category", "Category")
                         .WithMany("Books")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Back_end.Entities.BookeBorrowingRequestDetails", "RequestDetail")
+                    b.HasOne("Back_end.Entities.BookBorrowingRequest", "Request")
                         .WithMany("Books")
-                        .HasForeignKey("RequestDetailId")
+                        .HasForeignKey("RequestId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Author");
-
                     b.Navigation("Category");
 
-                    b.Navigation("RequestDetail");
+                    b.Navigation("Request");
                 });
 
             modelBuilder.Entity("Back_end.Entities.BookBorrowingRequest", b =>
                 {
-                    b.HasOne("Back_end.Entities.BookeBorrowingRequestDetails", "Detail")
-                        .WithMany("Requests")
-                        .HasForeignKey("DetailID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Back_end.Entities.User", "Requester")
+                    b.HasOne("Back_end.Entities.User", "User")
                         .WithMany("Requests")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Detail");
-
-                    b.Navigation("Requester");
+                    b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Back_end.Entities.Author", b =>
+            modelBuilder.Entity("Back_end.Entities.BookBorrowingRequest", b =>
                 {
                     b.Navigation("Books");
-                });
-
-            modelBuilder.Entity("Back_end.Entities.BookeBorrowingRequestDetails", b =>
-                {
-                    b.Navigation("Books");
-
-                    b.Navigation("Requests");
                 });
 
             modelBuilder.Entity("Back_end.Entities.Category", b =>

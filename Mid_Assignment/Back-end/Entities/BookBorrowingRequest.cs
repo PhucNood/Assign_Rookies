@@ -14,13 +14,13 @@ public class BookBorrowingRequest{
 
     public Status Status { get; set; }
 
+    
      public int UserId { get; set; }
 
-    public User Requester { get; set; }
-
-    public int DetailID { get; set;}
-
-    public BookeBorrowingRequestDetails Detail { get; set;}
+    public int ApproverID { get; set; }
+       
+    public User User { get; set; }
+    public ICollection<Book> Books { get; set; }
 
 }
 

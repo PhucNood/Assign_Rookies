@@ -11,12 +11,11 @@ public class LibraryContext : DbContext
 
     public virtual DbSet<Book> Books{get; set; }
     public virtual DbSet<Category> Categories{get; set;}
-    public virtual DbSet<Author> Authors{get; set;}
     public virtual DbSet<User> Users{get; set;}
 
       public virtual DbSet<BookBorrowingRequest > BookBorrowingRequests{get; set;}
 
-    public virtual DbSet<BookeBorrowingRequestDetails> BookeBorrowingRequestDetails{get; set;}
+  
 
    
 

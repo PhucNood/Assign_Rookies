@@ -12,7 +12,9 @@ var service = builder.Services;
 
 
 service.AddDbContext<LibraryContext>( 
-    options =>    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
+    options =>   {options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+    
+    } 
     
 );
 service.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());

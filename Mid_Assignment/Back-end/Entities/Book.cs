@@ -10,20 +10,19 @@ public class Book
     public int Id { get; set; }
     public string BookName { get; set; }
 
-    public int AuthorId { get; set; }
-
-    public Author Author { get; set; }
+    public string Author { get; set; }
 
     public DateTime PublishedDate { get; set; }
 
-    public int CateId { get; set; }
+    public int CategoryId { get; set; }
 
     public bool Available { get; set; }
 
+
+    public int RequestId { get; set; }
+
+
     public Category Category { get; set; }
-
-    public int RequestDetailId { get; set; }
-
-    public BookeBorrowingRequestDetails RequestDetail { get; set; }
+    public BookBorrowingRequest Request { get; set; }
 
 }
