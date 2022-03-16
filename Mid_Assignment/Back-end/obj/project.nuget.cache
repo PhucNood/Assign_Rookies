@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "Qiv090nM74MnCQgQXFbgMeMWdc1bJMIjmQUwzO3f8IaRpcYESDd9WXTdN8TUolK/79R+EVWD5aszNUiarr63tQ==",
+  "dgSpecHash": "KpAE8Jq8Onh0odbEoJO1w6fZaEABYTOoujnUHNXhPQYQWh6MlQelUyVMj8Qv6ESJhI/ABTXoFOZ3y+SzW9EPKw==",
   "success": true,
-  "projectFilePath": "d:\\Rookies4\\Mid_Assignment\\Back-end\\Back-end.csproj",
+  "projectFilePath": "D:\\Rookies4\\Mid_Assignment\\Back-end\\Back-end.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ACER\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
+    "C:\\Users\\ACER\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
     "C:\\Users\\ACER\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\ACER\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\ACER\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",

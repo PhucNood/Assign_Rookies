@@ -1,6 +1,5 @@
 using Back_end.Context;
 using Microsoft.EntityFrameworkCore;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -10,9 +9,14 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 var service = builder.Services;
-service.AddDbContext<LibraryContext>(
-    options => options.UseSqlServer("Server=LAPTOP-POPERAEM\\SQLEXPRESS; Database=LibrayManagement; User Id=sa; Password=sa;")
+
+
+service.AddDbContext<LibraryContext>( 
+    options =>    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
+    
 );
+service.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
 var app = builder.Build();
 
 

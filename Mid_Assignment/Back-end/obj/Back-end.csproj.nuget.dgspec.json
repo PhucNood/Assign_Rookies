@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\Rookies4\\Mid_Assignment\\Back-end\\Back-end.csproj": {}
+    "D:\\Rookies4\\Mid_Assignment\\Back-end\\Back-end.csproj": {}
   },
   "projects": {
-    "d:\\Rookies4\\Mid_Assignment\\Back-end\\Back-end.csproj": {
+    "D:\\Rookies4\\Mid_Assignment\\Back-end\\Back-end.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\Rookies4\\Mid_Assignment\\Back-end\\Back-end.csproj",
+        "projectUniqueName": "D:\\Rookies4\\Mid_Assignment\\Back-end\\Back-end.csproj",
         "projectName": "Back-end",
-        "projectPath": "d:\\Rookies4\\Mid_Assignment\\Back-end\\Back-end.csproj",
+        "projectPath": "D:\\Rookies4\\Mid_Assignment\\Back-end\\Back-end.csproj",
         "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-        "outputPath": "d:\\Rookies4\\Mid_Assignment\\Back-end\\obj\\",
+        "outputPath": "D:\\Rookies4\\Mid_Assignment\\Back-end\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -43,6 +43,10 @@
             "AutoMapper": {
               "target": "Package",
               "version": "[11.0.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",

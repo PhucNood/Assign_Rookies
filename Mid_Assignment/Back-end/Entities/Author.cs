@@ -3,13 +3,15 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Back_end.Entities;
 
-public class BookeBorrowingRequestDetails{ 
+public class Author
+{
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     [Key]
-   public int Id { get; set; }
-   
-   public ICollection<BookBorrowingRequest> Requests { get; set; }
-    
+
+    public int Id { get; set; }
+
+    public string AuthorName { get; set; }
+
     public ICollection<Book> Books { get; set; }
-   
+
 }
