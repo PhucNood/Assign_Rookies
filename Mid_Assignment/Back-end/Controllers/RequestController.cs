@@ -98,10 +98,14 @@ namespace Back_end.Controllers
 
     public IActionResult DeleteBookBorrowingRequest(int id)
     {
-        if (!_bookBorrowingRequestService.Existed(id)) return NotFound();
-        var bookBorrowingRequests = _mapper.Map<BookBorrowingRequestModel>(_bookBorrowingRequestService.GetById(id));
-        if (!ModelState.IsValid) return BadRequest(ModelState);
-        return Ok(bookBorrowingRequests);
+        if (id == null) return BadRequest();
+            if (!_bookBorrowingRequestService.Existed(id)) return NotFound();
+            var bookBorrowingRequest = _bookBorrowingRequestService.GetById(id);
+            if (_bookBorrowingRequestService.Existed(id))
+            {
+                _bookBorrowingRequestService.Remove(bookBorrowingRequest);
+            }
+            return Ok(bookBorrowingRequest);
     }
 
     }

@@ -41,55 +41,61 @@ public class BookController : ControllerBase
         return Ok(books);
     }
 
-      [HttpPost("api/Book")]
-      
-    
+    [HttpPost("api/Book")]
+
+
     public IActionResult PostBook(BookModel bookModel)
     {
-       var book = _mapper.Map<Book>(bookModel);
+        var book = _mapper.Map<Book>(bookModel);
 
-      if(bookModel == null) return BadRequest(ModelState);
-      if(!_bookService.IsIncorrectFK(book)) {
-        ModelState.AddModelError("InvalidFK","May be Invalid some foreign key ");
-        return StatusCode(422,ModelState);
-      }
-      if(!ModelState.IsValid){
-           ModelState.AddModelError("","May be not have the category or request");
-      } 
-      
-      
-       if(ModelState.IsValid){
-        
-         _bookService.Add(book);
-         return Ok(book);
-         } 
-      return BadRequest(ModelState);
+        if (bookModel == null) return BadRequest(ModelState);
+        if (!_bookService.IsIncorrectFK(book))
+        {
+            ModelState.AddModelError("InvalidFK", "May be Invalid some foreign key ");
+            return StatusCode(422, ModelState);
+        }
+        if (!ModelState.IsValid)
+        {
+            ModelState.AddModelError("", "May be not have the category or request");
+        }
+
+
+        if (ModelState.IsValid)
+        {
+
+            _bookService.Add(book);
+            return Ok(book);
+        }
+        return BadRequest(ModelState);
     }
 
-     [HttpPut("api/Book")]
-      [ProducesResponseType(204)]
-      [ProducesResponseType(400)]
-    
+    [HttpPut("api/Book")]
+    [ProducesResponseType(204)]
+    [ProducesResponseType(400)]
+
     public IActionResult UpdateBook(BookModel bookModel)
     {
-       var book = _mapper.Map<Book>(bookModel);
+        var book = _mapper.Map<Book>(bookModel);
 
-      if(bookModel == null) return BadRequest(ModelState);
-      if(_bookService.IsIncorrectFK(book)) {
-        ModelState.AddModelError("InvalidFK","May be Invalid some foreign key ");
-        return StatusCode(422,ModelState);
-      }
-      if(!ModelState.IsValid){
-           ModelState.AddModelError("","May be not have the category or request");
-      } 
-      
-      
-       if(ModelState.IsValid){
-        
-         _bookService.Update(book);
-         return Ok(book);
-         } 
-      return BadRequest(ModelState);
+        if (bookModel == null) return BadRequest(ModelState);
+        if (_bookService.IsIncorrectFK(book))
+        {
+            ModelState.AddModelError("InvalidFK", "May be Invalid some foreign key ");
+            return StatusCode(422, ModelState);
+        }
+        if (!ModelState.IsValid)
+        {
+            ModelState.AddModelError("", "May be not have the category or request");
+        }
+
+
+        if (ModelState.IsValid)
+        {
+
+            _bookService.Update(book);
+            return Ok(book);
+        }
+        return BadRequest(ModelState);
     }
 
     [HttpDelete("api/Book")]
@@ -97,14 +103,20 @@ public class BookController : ControllerBase
 
     public IActionResult DeleteBook(int id)
     {
+        if (id == null) return BadRequest(ModelState);
         if (!_bookService.Existed(id)) return NotFound();
-        var books = _mapper.Map<BookModel>(_bookService.GetById(id));
-        if (!ModelState.IsValid) return BadRequest(ModelState);
-        return Ok(books);
+        var books = _bookService.GetById(id);
+
+        if (_bookService.Existed(id))
+        {
+            _bookService.Remove(books);
+            return Ok(id);
+        }
+         return Ok(books);
     }
 
-   
-      
+
+
 
 
 }

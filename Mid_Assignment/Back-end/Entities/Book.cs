@@ -25,6 +25,6 @@ public class Book
 
 
     public Category Category { get; set; }
-    public BookBorrowingRequest Request { get; set; }
+    public BookBorrowingRequest? Request { get; set; }
 
 }

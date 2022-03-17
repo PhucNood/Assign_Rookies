@@ -28,74 +28,83 @@ namespace Back_end.Controllers
         }
 
         [HttpGet("api/Category")]
-    [ProducesResponseType(200, Type = typeof(CategoryModel))]
+        [ProducesResponseType(200, Type = typeof(CategoryModel))]
 
-    public IActionResult GetCategory(int id)
-    {
-        if (!_categoryService.Existed(id)) return NotFound();
-        var category = _mapper.Map<CategoryModel>(_categoryService.GetById(id));
-        if (!ModelState.IsValid) return BadRequest(ModelState);
-        return Ok(category);
-    }
+        public IActionResult GetCategory(int id)
+        {
+            if (!_categoryService.Existed(id)) return NotFound();
+            var category = _mapper.Map<CategoryModel>(_categoryService.GetById(id));
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+            return Ok(category);
+        }
 
-    [HttpPost("api/Category")]
-    [ProducesResponseType(200, Type = typeof(CategoryModel))]
-    
-    public IActionResult PostCategory(CategoryModel CategoryModel)
-    {
-       var category = _mapper.Map<Category>(CategoryModel);
+        [HttpPost("api/Category")]
+        [ProducesResponseType(200, Type = typeof(CategoryModel))]
 
-      if(CategoryModel == null) return BadRequest(ModelState);
-      
-      if(!ModelState.IsValid){
-           ModelState.AddModelError("","May be not have the category or request");
-      } 
-      
-      
-        if(ModelState.IsValid){
-        
-         _categoryService.Add(category);
-         return Ok(category);
-         } 
-      return BadRequest(ModelState);
-    }
+        public IActionResult PostCategory(CategoryModel CategoryModel)
+        {
+            var category = _mapper.Map<Category>(CategoryModel);
 
-    [HttpPut("api/category")]
-      [ProducesResponseType(204)]
-      [ProducesResponseType(400)]
-    
-    public IActionResult UpdateCategory(CategoryModel categoryModel)
-    {
-       var category = _mapper.Map<Category>(categoryModel);
+            if (CategoryModel == null) return BadRequest(ModelState);
 
-      if(categoryModel == null) return BadRequest(ModelState);
-      if(_categoryService.IsIncorrectFK(category)) {
-        ModelState.AddModelError("InvalidFK","May be Invalid some foreign key ");
-        return StatusCode(422,ModelState);
-      }
-      if(!ModelState.IsValid){
-           ModelState.AddModelError("","May be not have the category or request");
-      } 
-      
-      
-       if(ModelState.IsValid){
-        
-         _categoryService.Update(category);
-         return Ok(categoryModel);
-         } 
-      return BadRequest(ModelState);
-    }
+            if (!ModelState.IsValid)
+            {
+                ModelState.AddModelError("", "May be not have the category or request");
+            }
 
-    [HttpDelete("api/Category")]
-    [ProducesResponseType(200, Type = typeof(CategoryModel))]
 
-    public IActionResult DeleteCategory(int id)
-    {
-        if (!_categoryService.Existed(id)) return NotFound();
-        var categorys = _mapper.Map<CategoryModel>(_categoryService.GetById(id));
-        if (!ModelState.IsValid) return BadRequest(ModelState);
-        return Ok(categorys);
-    }
+            if (ModelState.IsValid)
+            {
+
+                _categoryService.Add(category);
+                return Ok(category);
+            }
+            return BadRequest(ModelState);
+        }
+
+        [HttpPut("api/category")]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+
+        public IActionResult UpdateCategory(CategoryModel categoryModel)
+        {
+            var category = _mapper.Map<Category>(categoryModel);
+
+            if (categoryModel == null) return BadRequest(ModelState);
+            if (_categoryService.IsIncorrectFK(category))
+            {
+                ModelState.AddModelError("InvalidFK", "May be Invalid some foreign key ");
+                return StatusCode(422, ModelState);
+            }
+            if (!ModelState.IsValid)
+            {
+                ModelState.AddModelError("", "May be not have the category or request");
+            }
+
+
+            if (ModelState.IsValid)
+            {
+
+                _categoryService.Update(category);
+                return Ok(categoryModel);
+            }
+            return BadRequest(ModelState);
+        }
+
+        [HttpDelete("api/Category")]
+        [ProducesResponseType(200, Type = typeof(CategoryModel))]
+
+        public IActionResult DeleteCategory(int id)
+        {
+            if (id == null) return BadRequest();
+            if (!_categoryService.Existed(id)) return NotFound();
+            var category = _categoryService.GetById(id);
+            if (_categoryService.Existed(id))
+            {
+                _categoryService.Remove(category);
+            }
+             return Ok(category);
+        }
 
 
     }

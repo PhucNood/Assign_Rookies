@@ -93,10 +93,14 @@ namespace Back_end.Controllers
 
     public IActionResult DeleteUser(int id)
     {
-        if (!_userService.Existed(id)) return NotFound();
-        var users = _mapper.Map<UserModel>(_userService.GetById(id));
-        if (!ModelState.IsValid) return BadRequest(ModelState);
-        return Ok(users);
+        if (id == null) return BadRequest();
+            if (!_userService.Existed(id)) return NotFound();
+            var user = _userService.GetById(id);
+            if (_userService.Existed(id))
+            {
+                _userService.Remove(user);
+            }
+            return Ok(user);
     }
     }
 }

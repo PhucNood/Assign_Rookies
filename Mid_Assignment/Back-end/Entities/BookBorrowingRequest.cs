@@ -17,7 +17,7 @@ public class BookBorrowingRequest{
     
      public int UserId { get; set; }
     
-    public int ApproverID { get; set; }
+    public int? ApproverID { get; set; } =null;
        
     public User User { get; set; }
     public ICollection<Book> Books { get; set; }
