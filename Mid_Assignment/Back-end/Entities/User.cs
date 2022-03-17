@@ -7,9 +7,10 @@ public class User
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; set; }
-
+    
+    [Required(ErrorMessage = "Required.")]
     public string UserName { get; set; }
-
+    [Required(ErrorMessage = "Required.")]
     public string Password { get; set; }
 
     public bool IsSuper { get; set; }

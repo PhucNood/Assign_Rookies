@@ -9,7 +9,7 @@ namespace Back_end.Mapper
         {
             CreateMap<Book, BookModel>();
             CreateMap<BookModel, Book>();
-            CreateMap<User, BookModel>();
+            CreateMap<User, UserModel>();
             CreateMap<UserModel, User>();
             CreateMap<BookBorrowingRequest, BookBorrowingRequestModel>();
             CreateMap<BookBorrowingRequestModel, BookBorrowingRequest>();

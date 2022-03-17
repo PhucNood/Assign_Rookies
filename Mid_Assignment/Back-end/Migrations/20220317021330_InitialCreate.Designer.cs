@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Back_end.Migrations
 {
     [DbContext(typeof(LibraryContext))]
-    [Migration("20220316085345_InitialCreate")]
+    [Migration("20220317021330_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -73,7 +73,7 @@ namespace Back_end.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("ApproverID")
+                    b.Property<int?>("ApproverID")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("DateOfRequest")

@@ -22,7 +22,7 @@ namespace Back_end.Controllers
 
         [HttpGet("api/Users")]
         [ProducesResponseType(200, Type = typeof(IEnumerable<UserModel>))]
-        public IActionResult GetUser()
+        public IActionResult GetUsers()
         {
             var user = _mapper.Map<List<UserModel>>(_userService.GetAll());
             if (!ModelState.IsValid) return BadRequest(user);
@@ -57,7 +57,7 @@ namespace Back_end.Controllers
         if(ModelState.IsValid){
         
          _userService.Add(user);
-         return Ok(user);
+         return Ok(ModelState);
          } 
       return BadRequest(ModelState);
     }

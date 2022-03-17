@@ -71,7 +71,7 @@ namespace Back_end.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("ApproverID")
+                    b.Property<int?>("ApproverID")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("DateOfRequest")

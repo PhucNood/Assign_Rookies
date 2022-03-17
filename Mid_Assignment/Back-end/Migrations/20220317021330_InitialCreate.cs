@@ -46,7 +46,7 @@ namespace Back_end.Migrations
                     DateOfRequest = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Status = table.Column<int>(type: "int", nullable: false),
                     UserId = table.Column<int>(type: "int", nullable: false),
-                    ApproverID = table.Column<int>(type: "int", nullable: false)
+                    ApproverID = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
