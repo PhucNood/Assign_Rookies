@@ -103,7 +103,7 @@ namespace Back_end.Controllers
             {
                 _categoryService.Remove(category);
             }
-             return Ok(category);
+            return Ok(category);
         }
 
 

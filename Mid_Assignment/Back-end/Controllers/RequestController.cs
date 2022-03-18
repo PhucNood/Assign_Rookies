@@ -9,7 +9,7 @@ namespace Back_end.Controllers
     [Route("[controller]")]
     public class RequestController : ControllerBase
     {
-         private readonly IService<BookBorrowingRequest> _bookBorrowingRequestService;
+        private readonly IService<BookBorrowingRequest> _bookBorrowingRequestService;
         private readonly IMapper _mapper;
 
         public RequestController(IService<BookBorrowingRequest> bookBorrowingRequestService, IMapper mapper)
@@ -20,7 +20,7 @@ namespace Back_end.Controllers
 
         [HttpGet("api/BookBorrowingRequests")]
         [ProducesResponseType(200, Type = typeof(IEnumerable<BookBorrowingRequestModel>))]
-         [ProducesResponseType(404)]
+        [ProducesResponseType(404)]
         public IActionResult GetbookBorrowingRequest()
         {
             var bookBorrowingRequest = _mapper.Map<List<BookBorrowingRequestModel>>(_bookBorrowingRequestService.GetAll());
@@ -29,76 +29,82 @@ namespace Back_end.Controllers
         }
 
         [HttpGet("api/BookBorrowingRequest")]
-    [ProducesResponseType(200, Type = typeof(BookBorrowingRequestModel))]
-    [ProducesResponseType(404)]
+        [ProducesResponseType(200, Type = typeof(BookBorrowingRequestModel))]
+        [ProducesResponseType(404)]
 
-    public IActionResult GetbookBorrowingRequest(int id)
-    {
-        if (!_bookBorrowingRequestService.Existed(id)) return NotFound();
-        var bookBorrowingRequest = _mapper.Map<BookBorrowingRequestModel>(_bookBorrowingRequestService.GetById(id));
-        if (!ModelState.IsValid) return BadRequest(ModelState);
-        return Ok(bookBorrowingRequest);
-    }
+        public IActionResult GetbookBorrowingRequest(int id)
+        {
+            if (!_bookBorrowingRequestService.Existed(id)) return NotFound();
+            var bookBorrowingRequest = _mapper.Map<BookBorrowingRequestModel>(_bookBorrowingRequestService.GetById(id));
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+            return Ok(bookBorrowingRequest);
+        }
 
-    [HttpPost("api/BookBorrowingRequest")]
-    [ProducesResponseType(200, Type = typeof(BookBorrowingRequestModel))]
-    
-    public IActionResult PostbookBorrowingRequest(BookBorrowingRequestModel bookBorrowingRequestModel)
-    {
-       var bookBorrowingRequest = _mapper.Map<BookBorrowingRequest>(bookBorrowingRequestModel);
+        [HttpPost("api/BookBorrowingRequest")]
+        [ProducesResponseType(200, Type = typeof(BookBorrowingRequestModel))]
 
-       if(!_bookBorrowingRequestService.IsIncorrectFK(bookBorrowingRequest)) {
-        ModelState.AddModelError("InvalidFK","May be Invalid some foreign key ");
-        return StatusCode(422,ModelState);
-      }
+        public IActionResult PostbookBorrowingRequest(BookBorrowingRequestModel bookBorrowingRequestModel)
+        {
+            var bookBorrowingRequest = _mapper.Map<BookBorrowingRequest>(bookBorrowingRequestModel);
 
-      if(bookBorrowingRequestModel == null) return BadRequest(ModelState);
-      
-      if(!ModelState.IsValid){
-           ModelState.AddModelError("","May be not have the bookBorrowingRequest or request");
-      } 
-      
-      
-        if(ModelState.IsValid){
-        
-         _bookBorrowingRequestService.Add(bookBorrowingRequest);
-         return Ok(bookBorrowingRequest);
-         } 
-      return BadRequest(ModelState);
-    }
+            if (_bookBorrowingRequestService.IsIncorrectFK(bookBorrowingRequest))
+            {
+                ModelState.AddModelError("InvalidFK", "May be Invalid some foreign key ");
+                return StatusCode(422, ModelState);
+            }
 
-    [HttpPut("api/BookBorrowingRequest")]
-      [ProducesResponseType(204)]
-      [ProducesResponseType(400)]
-    
-    public IActionResult UpdatebookBorrowingRequest(BookBorrowingRequestModel bookBorrowingRequestModel)
-    {
-       var bookBorrowingRequest = _mapper.Map<BookBorrowingRequest>(bookBorrowingRequestModel);
+            if (bookBorrowingRequestModel == null) return BadRequest(ModelState);
 
-      if(bookBorrowingRequestModel == null) return BadRequest(ModelState);
-      if(_bookBorrowingRequestService.IsIncorrectFK(bookBorrowingRequest)) {
-        ModelState.AddModelError("InvalidFK","May be Invalid some foreign key ");
-        return StatusCode(422,ModelState);
-      }
-      if(!ModelState.IsValid){
-           ModelState.AddModelError("","May be not have the bookBorrowingRequest or request");
-      } 
-      
-      
-       if(ModelState.IsValid){
-        
-         _bookBorrowingRequestService.Update(bookBorrowingRequest);
-         return Ok(bookBorrowingRequestModel);
-         } 
-      return BadRequest(ModelState);
-    }
+            if (!ModelState.IsValid)
+            {
+                ModelState.AddModelError("", "May be not have the bookBorrowingRequest or request");
+            }
 
-    [HttpDelete("api/BookBorrowingRequest")]
-    [ProducesResponseType(200, Type = typeof(BookBorrowingRequestModel))]
 
-    public IActionResult DeleteBookBorrowingRequest(int id)
-    {
-        if (id == null) return BadRequest();
+            if (ModelState.IsValid)
+            {
+
+                _bookBorrowingRequestService.Add(bookBorrowingRequest);
+                return Ok(bookBorrowingRequest);
+            }
+            return BadRequest(ModelState);
+        }
+
+        [HttpPut("api/BookBorrowingRequest")]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+
+        public IActionResult UpdatebookBorrowingRequest(BookBorrowingRequestModel bookBorrowingRequestModel)
+        {
+            var bookBorrowingRequest = _mapper.Map<BookBorrowingRequest>(bookBorrowingRequestModel);
+
+            if (bookBorrowingRequestModel == null) return BadRequest(ModelState);
+            if (_bookBorrowingRequestService.IsIncorrectFK(bookBorrowingRequest))
+            {
+                ModelState.AddModelError("InvalidFK", "May be Invalid some foreign key ");
+                return StatusCode(422, ModelState);
+            }
+            if (!ModelState.IsValid)
+            {
+                ModelState.AddModelError("", "May be not have the bookBorrowingRequest or request");
+            }
+
+
+            if (ModelState.IsValid)
+            {
+
+                _bookBorrowingRequestService.Update(bookBorrowingRequest);
+                return Ok(bookBorrowingRequestModel);
+            }
+            return BadRequest(ModelState);
+        }
+
+        [HttpDelete("api/BookBorrowingRequest")]
+        [ProducesResponseType(200, Type = typeof(BookBorrowingRequestModel))]
+
+        public IActionResult DeleteBookBorrowingRequest(int id)
+        {
+            if (id == null) return BadRequest();
             if (!_bookBorrowingRequestService.Existed(id)) return NotFound();
             var bookBorrowingRequest = _bookBorrowingRequestService.GetById(id);
             if (_bookBorrowingRequestService.Existed(id))
@@ -106,7 +112,7 @@ namespace Back_end.Controllers
                 _bookBorrowingRequestService.Remove(bookBorrowingRequest);
             }
             return Ok(bookBorrowingRequest);
-    }
+        }
 
     }
 }

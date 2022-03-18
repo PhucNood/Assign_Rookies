@@ -16,15 +16,16 @@ namespace Back_end.Services
         }
         public void Add(Book book)
         {
-           Transact(book =>{
-               _context.Books.Add(book);
-              
-           },book);
+            Transact(book =>
+            {
+                _context.Books.Add(book);
+
+            }, book);
         }
 
         public bool Existed(int id)
         {
-            return _context.Books.Any(b=>b.Id == id);
+            return _context.Books.Any(b => b.Id == id);
         }
 
         public ICollection<Book> GetAll()
@@ -34,28 +35,31 @@ namespace Back_end.Services
 
         public Book GetById(int id)
         {
-           return GetAll().FirstOrDefault(book => book.Id == id);
+            return GetAll().FirstOrDefault(book => book.Id == id);
         }
 
         public void Remove(Book book)
         {
-          Transact(book =>{
-               _context.Books.Remove(book);
-           },book);
+            Transact(book =>
+            {
+                _context.Books.Remove(book);
+            }, book);
         }
 
         public void Update(Book book)
         {
-            
-           Transact(book =>{
-               _context.Books.Update(book);
-           },book);
-          
+
+            Transact(book =>
+            {
+                _context.Books.Update(book);
+            }, book);
+
         }
 
-        public bool IsIncorrectFK(Book b){
-             if(!_context.Books.Any(book => book.CategoryId ==b.CategoryId)) return false;
-             if(!_context.Books.Any(book => book.RequestId ==b.RequestId)) return false;
+        public bool IsIncorrectFK(Book b)
+        {
+            if (_context.Categories.Any(c => c.Id == b.CategoryId)) return false;
+          
             return true;
         }
 
@@ -63,13 +67,13 @@ namespace Back_end.Services
         {
             try
             {
-                 action(item); 
+                action(item);
                 _context.SaveChanges();
                 _transaction.Commit();
             }
             catch (System.Exception)
-            {               
-               _transaction.Rollback();
+            {
+                _transaction.Rollback();
             }
         }
     }

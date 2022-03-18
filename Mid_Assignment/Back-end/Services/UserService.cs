@@ -6,7 +6,7 @@ namespace Back_end.Services
 {
     public class UserService : IService<User>
     {
-         private readonly LibraryContext _context;
+        private readonly LibraryContext _context;
         private readonly IDbContextTransaction _transaction;
 
         public UserService(LibraryContext context)
@@ -16,19 +16,20 @@ namespace Back_end.Services
         }
         public void Add(User item)
         {
-            Transact(item =>{
-               _context.Users.Add(item);
-           },item);
+            Transact(item =>
+            {
+                _context.Users.Add(item);
+            }, item);
         }
 
         public bool Existed(int id)
         {
-            return _context.Users.Any(u=>u.Id == id);
+            return _context.Users.Any(u => u.Id == id);
         }
 
         public ICollection<User> GetAll()
         {
-            return  _context.Users.ToList();
+            return _context.Users.ToList();
         }
 
         public User GetById(int id)
@@ -43,30 +44,33 @@ namespace Back_end.Services
 
         public void Remove(User item)
         {
-            Transact(item =>{
-               _context.Users.Remove(item);
-           },item);
+            Transact(item =>
+            {
+                _context.Users.Remove(item);
+            }, item);
         }
 
         public void Transact(Action<User> action, User item)
         {
-           try
+            try
             {
-                 action(item); 
+                action(item);
                 _context.SaveChanges();
                 _transaction.Commit();
             }
             catch (System.Exception)
             {
-                
-               _transaction.Rollback();
+
+                _transaction.Rollback();
             }
         }
 
         public void Update(User item)
-        { Transact(item =>{
-               _context.Users.Update(item);
-           },item);
+        {
+            Transact(item =>
+            {
+                _context.Users.Update(item);
+            }, item);
         }
     }
 }

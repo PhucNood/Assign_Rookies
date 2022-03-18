@@ -7,7 +7,7 @@ namespace Back_end.Services
     public class RequestService : IService<BookBorrowingRequest>
     {
 
-         private readonly LibraryContext _context;
+        private readonly LibraryContext _context;
         private readonly IDbContextTransaction _transaction;
 
         public RequestService(LibraryContext context)
@@ -17,60 +17,63 @@ namespace Back_end.Services
         }
         public void Add(BookBorrowingRequest item)
         {
-            Transact(item =>{
-               _context.BookBorrowingRequests.Add(item);
-           },item);
+            Transact(item =>
+            {
+                _context.BookBorrowingRequests.Add(item);
+            }, item);
         }
 
         public bool Existed(int id)
         {
-            return _context.Users.Any(u=>u.Id == id);
+            return _context.Users.Any(u => u.Id == id);
         }
 
         public ICollection<BookBorrowingRequest> GetAll()
         {
-             return  _context.BookBorrowingRequests.ToList();
+            return _context.BookBorrowingRequests.ToList();
         }
 
         public BookBorrowingRequest GetById(int id)
         {
-           return GetAll().FirstOrDefault(r => r.Id == id);
+            return GetAll().FirstOrDefault(r => r.Id == id);
         }
 
         public bool IsIncorrectFK(BookBorrowingRequest item)
         {
-             if(_context.BookBorrowingRequests.Any(r => r.UserId == item.UserId)) return false;
-               if(_context.BookBorrowingRequests.Any(r => r.ApproverID == item.ApproverID)) return false;
+            if (_context.Users.Any(u => u.Id == item.UserId)) return false;
+           
             return true;
         }
 
         public void Remove(BookBorrowingRequest item)
         {
-            Transact(item =>{
-               _context.BookBorrowingRequests.Remove(item);
-           },item);
+            Transact(item =>
+            {
+                _context.BookBorrowingRequests.Remove(item);
+            }, item);
         }
 
         public void Transact(Action<BookBorrowingRequest> action, BookBorrowingRequest item)
         {
-           try
+            try
             {
-                 action(item); 
+                action(item);
                 _context.SaveChanges();
                 _transaction.Commit();
             }
             catch (System.Exception)
             {
-                
-               _transaction.Rollback();
+
+                _transaction.Rollback();
             }
         }
 
         public void Update(BookBorrowingRequest item)
         {
-             Transact(item =>{
-               _context.BookBorrowingRequests.Update(item);
-           },item);
+            Transact(item =>
+            {
+                _context.BookBorrowingRequests.Update(item);
+            }, item);
         }
     }
 }

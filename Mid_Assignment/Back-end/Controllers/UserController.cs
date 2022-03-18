@@ -11,7 +11,7 @@ namespace Back_end.Controllers
     [Route("[controller]")]
     public class UserController : ControllerBase
     {
-          private readonly IService<User> _userService;
+        private readonly IService<User> _userService;
         private readonly IMapper _mapper;
 
         public UserController(IService<User> userService, IMapper mapper)
@@ -30,70 +30,75 @@ namespace Back_end.Controllers
         }
 
         [HttpGet("api/User")]
-    [ProducesResponseType(200, Type = typeof(UserModel))]
+        [ProducesResponseType(200, Type = typeof(UserModel))]
 
-    public IActionResult GetUser(int id)
-    {
-        if (!_userService.Existed(id)) return NotFound();
-        var user = _mapper.Map<UserModel>(_userService.GetById(id));
-        if (!ModelState.IsValid) return BadRequest(ModelState);
-        return Ok(user);
-    }
+        public IActionResult GetUser(int id)
+        {
+            if (!_userService.Existed(id)) return NotFound();
+            var user = _mapper.Map<UserModel>(_userService.GetById(id));
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+            return Ok(user);
+        }
 
-    [HttpPost("api/User")]
-    [ProducesResponseType(200, Type = typeof(UserModel))]
-    
-    public IActionResult PostUser(UserModel userModel)
-    {
-       var user = _mapper.Map<User>(userModel);
+        [HttpPost("api/User")]
+        [ProducesResponseType(200, Type = typeof(UserModel))]
 
-      if(userModel == null) return BadRequest(ModelState);
-      
-      if(!ModelState.IsValid){
-           ModelState.AddModelError("","May be not have the user or request");
-      } 
-      
-      
-        if(ModelState.IsValid){
-        
-         _userService.Add(user);
-         return Ok(ModelState);
-         } 
-      return BadRequest(ModelState);
-    }
+        public IActionResult PostUser(UserModel userModel)
+        {
+            var user = _mapper.Map<User>(userModel);
 
-    [HttpPut("api/User")]
-      [ProducesResponseType(204)]
-      [ProducesResponseType(400)]
-    
-    public IActionResult UpdateUser(UserModel userModel)
-    {
-       var user = _mapper.Map<User>(userModel);
+            if (userModel == null) return BadRequest(ModelState);
 
-      if(userModel == null) return BadRequest(ModelState);
-      if(_userService.IsIncorrectFK(user)) {
-        ModelState.AddModelError("InvalidFK","May be Invalid some foreign key ");
-        return StatusCode(422,ModelState);
-      }
-      if(!ModelState.IsValid){
-           ModelState.AddModelError("","May be not have the user or request");
-      } 
-      
-      
-       if(ModelState.IsValid){
-        
-         _userService.Update(user);
-         return Ok(userModel);
-         } 
-      return BadRequest(ModelState);
-    }
+            if (!ModelState.IsValid)
+            {
+                ModelState.AddModelError("", "May be not have the user or request");
+            }
 
-    [HttpDelete("api/User")]
-    [ProducesResponseType(200, Type = typeof(UserModel))]
 
-    public IActionResult DeleteUser(int id)
-    {
-        if (id == null) return BadRequest();
+            if (ModelState.IsValid)
+            {
+
+                _userService.Add(user);
+                return Ok(userModel);
+            }
+            return BadRequest(ModelState);
+        }
+
+        [HttpPut("api/User")]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+
+        public IActionResult UpdateUser(UserModel userModel)
+        {
+            var user = _mapper.Map<User>(userModel);
+
+            if (userModel == null) return BadRequest(ModelState);
+            if (_userService.IsIncorrectFK(user))
+            {
+                ModelState.AddModelError("InvalidFK", "May be Invalid some foreign key ");
+                return StatusCode(422, ModelState);
+            }
+            if (!ModelState.IsValid)
+            {
+                ModelState.AddModelError("", "May be not have the user or request");
+            }
+
+
+            if (ModelState.IsValid)
+            {
+
+                _userService.Update(user);
+                return Ok(userModel);
+            }
+            return BadRequest(ModelState);
+        }
+
+        [HttpDelete("api/User")]
+        [ProducesResponseType(200, Type = typeof(UserModel))]
+
+        public IActionResult DeleteUser(int id)
+        {
+            if (id == null) return BadRequest();
             if (!_userService.Existed(id)) return NotFound();
             var user = _userService.GetById(id);
             if (_userService.Existed(id))
@@ -101,6 +106,6 @@ namespace Back_end.Controllers
                 _userService.Remove(user);
             }
             return Ok(user);
-    }
+        }
     }
 }

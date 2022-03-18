@@ -25,6 +25,18 @@ service.AddTransient<IService<Book>,BookService>();
 service.AddTransient<IService<Category>,CategoryService>();
 service.AddTransient<IService<User>,UserService>();
 service.AddTransient<IService<BookBorrowingRequest>,RequestService>();
+
+service.AddCors(options =>
+    {
+          options.AddPolicy("AllowAllHeaders",
+                builder =>
+            {
+                     builder.WithOrigins("http://localhost:3000");
+                    builder.AllowAnyOrigin()
+                           .AllowAnyHeader()
+                           .AllowAnyMethod();
+                });
+    });
 var app = builder.Build();
 
 

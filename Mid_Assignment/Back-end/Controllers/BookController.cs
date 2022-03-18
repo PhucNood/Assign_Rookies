@@ -49,11 +49,11 @@ public class BookController : ControllerBase
         var book = _mapper.Map<Book>(bookModel);
 
         if (bookModel == null) return BadRequest(ModelState);
-        if (!_bookService.IsIncorrectFK(book))
-        {
-            ModelState.AddModelError("InvalidFK", "May be Invalid some foreign key ");
-            return StatusCode(422, ModelState);
-        }
+        // if (_bookService.IsIncorrectFK(book))
+        // {
+        //     ModelState.AddModelError("InvalidFK", "May be Invalid some foreign key ");
+        //     return StatusCode(422, ModelState);
+        // }
         if (!ModelState.IsValid)
         {
             ModelState.AddModelError("", "May be not have the category or request");
@@ -112,7 +112,7 @@ public class BookController : ControllerBase
             _bookService.Remove(books);
             return Ok(id);
         }
-         return Ok(books);
+        return Ok(books);
     }
 
 
