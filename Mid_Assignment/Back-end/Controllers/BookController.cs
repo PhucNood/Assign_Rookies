@@ -3,14 +3,15 @@ using Back_end.Services;
 using Back_end.Entities;
 using Back_end.Models;
 using AutoMapper;
+using Microsoft.AspNetCore.Cors;
 
 namespace Back_end.Controllers;
-
+[EnableCors()]
 [ApiController]
 [Route("[controller]")]
 public class BookController : ControllerBase
 {
-
+    
     private readonly IService<Book> _bookService;
     private readonly IMapper _mapper;
 
@@ -22,12 +23,15 @@ public class BookController : ControllerBase
 
     [HttpGet("api/Books")]
     [ProducesResponseType(200, Type = typeof(IEnumerable<BookModel>))]
+  
     public IActionResult GetBooks()
     {
         var books = _mapper.Map<List<BookModel>>(_bookService.GetAll());
         if (!ModelState.IsValid) return BadRequest(books);
         return Ok(books);
     }
+
+  
 
 
     [HttpGet("api/Book")]

@@ -8,7 +8,7 @@ namespace Back_end.Services
     {
         private readonly LibraryContext _context;
         private readonly IDbContextTransaction _transaction;
-
+    
         public BookService(LibraryContext context)
         {
             _context = context;
@@ -74,6 +74,7 @@ namespace Back_end.Services
             catch (System.Exception)
             {
                 _transaction.Rollback();
+                  
             }
         }
     }

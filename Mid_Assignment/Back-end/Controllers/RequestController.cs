@@ -3,8 +3,11 @@ using Back_end.Services;
 using Back_end.Entities;
 using Back_end.Models;
 using AutoMapper;
+using Microsoft.AspNetCore.Cors;
+
 namespace Back_end.Controllers
 {
+    [EnableCors()]
     [ApiController]
     [Route("[controller]")]
     public class RequestController : ControllerBase

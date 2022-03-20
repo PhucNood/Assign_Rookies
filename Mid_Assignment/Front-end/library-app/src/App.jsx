@@ -5,6 +5,7 @@ import React from "react";
 import HomePage from './pages/HomePage';
 import {BookPage} from './pages/BookPage';
 import {LoginPage} from './pages/LoginPage';
+import {RegisterPage} from './pages/RegisterPage';
 import { BrowserRouter, Routes, Route, } from "react-router-dom";
 
 
@@ -14,9 +15,10 @@ export default function App() {
         { Path: '/', Element: <HomePage></HomePage> },
         { Path: '/bookpage', Element: <BookPage></BookPage>,Name:'Book' },
         { Path: '/login', Element: <LoginPage></LoginPage>,Name:'Login' },
+        { Path: '/register', Element: <RegisterPage></RegisterPage> },
     ];
 
-    console.log("app")
+    
     return <div>
         <BrowserRouter >
             <Navbar bg="dark" variant="dark">
