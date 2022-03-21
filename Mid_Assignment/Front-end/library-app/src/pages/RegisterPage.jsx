@@ -14,7 +14,7 @@ export function RegisterPage() {
         firstName: Yup.string().min(2, 'Must be at least 2 characters').required('Require'),
         lastName: Yup.string().min(2, 'Must be at least 2 characters').required('Require'),
         email: Yup.string().email('Invalid email').required('Require'),
-        password: Yup.string().min(8, 'Must be at least 15 characters').required('Require'),
+        password: Yup.string().min(8, 'Must be at least 8 characters').required('Require'),
         confirm_password: Yup.string().oneOf([Yup.ref("password"), null], "Password must match").required('Require'),
         phoneNumber: Yup.string().matches(phoneRegExp, 'Phone number is not valid')
     })

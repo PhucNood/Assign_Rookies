@@ -4,12 +4,14 @@ using Back_end.Entities;
 using Back_end.Models;
 using AutoMapper;
 using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Back_end.Controllers
 {
     [EnableCors()]
     [ApiController]
     [Route("[controller]")]
+
     public class UserController : ControllerBase
     {
         private readonly IService<User> _userService;
@@ -20,7 +22,7 @@ namespace Back_end.Controllers
             _userService = userService;
             _mapper = mapper;
         }
-
+      //  [Authorize(Roles = "Admin")]
         [HttpGet("api/Users")]
         [ProducesResponseType(200, Type = typeof(IEnumerable<UserModel>))]
         public IActionResult GetUsers()
@@ -29,7 +31,7 @@ namespace Back_end.Controllers
             if (!ModelState.IsValid) return BadRequest(user);
             return Ok(user);
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpGet("api/User")]
         [ProducesResponseType(200, Type = typeof(UserModel))]
 
@@ -64,7 +66,7 @@ namespace Back_end.Controllers
             }
             return BadRequest(ModelState);
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpPut("api/User")]
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
@@ -93,7 +95,7 @@ namespace Back_end.Controllers
             }
             return BadRequest(ModelState);
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpDelete("api/User")]
         [ProducesResponseType(200, Type = typeof(UserModel))]
 

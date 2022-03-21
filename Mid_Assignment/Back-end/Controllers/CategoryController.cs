@@ -4,6 +4,7 @@ using Back_end.Entities;
 using Back_end.Models;
 using AutoMapper;
 using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Back_end.Controllers
 {
@@ -23,13 +24,14 @@ namespace Back_end.Controllers
 
         [HttpGet("api/Categories")]
         [ProducesResponseType(200, Type = typeof(IEnumerable<CategoryModel>))]
-        public IActionResult GetCategory()
+        public IActionResult GetCategories()
         {
             var category = _mapper.Map<List<CategoryModel>>(_categoryService.GetAll());
             if (!ModelState.IsValid) return BadRequest(category);
             return Ok(category);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpGet("api/Category")]
         [ProducesResponseType(200, Type = typeof(CategoryModel))]
 
@@ -40,7 +42,7 @@ namespace Back_end.Controllers
             if (!ModelState.IsValid) return BadRequest(ModelState);
             return Ok(category);
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpPost("api/Category")]
         [ProducesResponseType(200, Type = typeof(CategoryModel))]
 
@@ -64,7 +66,7 @@ namespace Back_end.Controllers
             }
             return BadRequest(ModelState);
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpPut("api/category")]
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
@@ -93,7 +95,7 @@ namespace Back_end.Controllers
             }
             return BadRequest(ModelState);
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpDelete("api/Category")]
         [ProducesResponseType(200, Type = typeof(CategoryModel))]
 

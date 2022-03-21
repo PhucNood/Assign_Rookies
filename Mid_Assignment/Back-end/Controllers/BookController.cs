@@ -1,9 +1,11 @@
+using System.Net;
 using Microsoft.AspNetCore.Mvc;
 using Back_end.Services;
 using Back_end.Entities;
 using Back_end.Models;
 using AutoMapper;
 using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Back_end.Controllers;
 [EnableCors()]
@@ -11,7 +13,7 @@ namespace Back_end.Controllers;
 [Route("[controller]")]
 public class BookController : ControllerBase
 {
-    
+
     private readonly IService<Book> _bookService;
     private readonly IMapper _mapper;
 
@@ -21,9 +23,10 @@ public class BookController : ControllerBase
         _mapper = mapper;
     }
 
+
     [HttpGet("api/Books")]
     [ProducesResponseType(200, Type = typeof(IEnumerable<BookModel>))]
-  
+
     public IActionResult GetBooks()
     {
         var books = _mapper.Map<List<BookModel>>(_bookService.GetAll());
@@ -31,9 +34,9 @@ public class BookController : ControllerBase
         return Ok(books);
     }
 
-  
 
 
+    [Authorize(Roles = "Admin")]
     [HttpGet("api/Book")]
     [ProducesResponseType(200, Type = typeof(BookModel))]
 
@@ -47,17 +50,17 @@ public class BookController : ControllerBase
 
     [HttpPost("api/Book")]
 
-
+    [Authorize(Roles = "Admin")]
     public IActionResult PostBook(BookModel bookModel)
     {
         var book = _mapper.Map<Book>(bookModel);
 
         if (bookModel == null) return BadRequest(ModelState);
-        // if (_bookService.IsIncorrectFK(book))
-        // {
-        //     ModelState.AddModelError("InvalidFK", "May be Invalid some foreign key ");
-        //     return StatusCode(422, ModelState);
-        // }
+        if (_bookService.IsIncorrectFK(book))
+        {
+            ModelState.AddModelError("InvalidFK", "May be Invalid some foreign key ");
+            return StatusCode(422, ModelState);
+        }
         if (!ModelState.IsValid)
         {
             ModelState.AddModelError("", "May be not have the category or request");
@@ -72,7 +75,7 @@ public class BookController : ControllerBase
         }
         return BadRequest(ModelState);
     }
-
+    [Authorize(Roles = "Admin")]
     [HttpPut("api/Book")]
     [ProducesResponseType(204)]
     [ProducesResponseType(400)]
@@ -101,7 +104,7 @@ public class BookController : ControllerBase
         }
         return BadRequest(ModelState);
     }
-
+    [Authorize(Roles = "Admin")]
     [HttpDelete("api/Book")]
     [ProducesResponseType(200, Type = typeof(BookModel))]
 

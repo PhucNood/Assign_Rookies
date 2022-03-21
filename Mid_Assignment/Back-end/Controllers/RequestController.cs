@@ -4,6 +4,7 @@ using Back_end.Entities;
 using Back_end.Models;
 using AutoMapper;
 using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Back_end.Controllers
 {
@@ -34,7 +35,7 @@ namespace Back_end.Controllers
         [HttpGet("api/BookBorrowingRequest")]
         [ProducesResponseType(200, Type = typeof(BookBorrowingRequestModel))]
         [ProducesResponseType(404)]
-
+        [Authorize(Roles = "Admin")]
         public IActionResult GetbookBorrowingRequest(int id)
         {
             if (!_bookBorrowingRequestService.Existed(id)) return NotFound();
@@ -42,7 +43,7 @@ namespace Back_end.Controllers
             if (!ModelState.IsValid) return BadRequest(ModelState);
             return Ok(bookBorrowingRequest);
         }
-
+        [Authorize(Roles = "User,Admin")]
         [HttpPost("api/BookBorrowingRequest")]
         [ProducesResponseType(200, Type = typeof(BookBorrowingRequestModel))]
 
@@ -72,7 +73,7 @@ namespace Back_end.Controllers
             }
             return BadRequest(ModelState);
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpPut("api/BookBorrowingRequest")]
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
@@ -101,7 +102,7 @@ namespace Back_end.Controllers
             }
             return BadRequest(ModelState);
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpDelete("api/BookBorrowingRequest")]
         [ProducesResponseType(200, Type = typeof(BookBorrowingRequestModel))]
 

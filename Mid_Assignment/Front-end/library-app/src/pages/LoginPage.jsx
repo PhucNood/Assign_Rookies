@@ -11,7 +11,7 @@ export function LoginPage() {
     const schema = Yup.object({
 
         email: Yup.string().email('Invalid email').required('Require'),
-        password: Yup.string().min(8, 'Must be at least 15 characters').required('Require'),
+        password: Yup.string().min(8, 'Must be at least 8 characters').required('Require'),
 
     })
 
@@ -29,27 +29,17 @@ export function LoginPage() {
 
             }
             validationSchema={schema}
-           
-        // onSubmit={async values => {
-        //   await  axios.post('https://localhost:7040/User/api/User', {
-        //         userName: values.firstName + " " + values.lastName,
-        //         gender: values.gender,
-        //         address: values.address,
-        //         phone: values.phone,
-        //         dateOfBirth:new Date("October 13, 2014 11:13:00"),
-        //         account: values.email,
-        //         password: values.password,
-        //         isSuper:false
+            onSubmit={async values => {
+                await axios.post('https://localhost:7040/Authorize/api/Token',{account:values.email,password:values.password}).then(
+                    (response) => {
+                        console.log(response.data);
+                       localStorage.setItem('token', response.data)
+                  
+                       
+                    }).catch((error) => {console.log(error);})
 
-
-
-        //     }).then(response => {
-        //         console.log(values.dateOfBirth);
-        //         console.log(response)
-        //     }).catch(err => {
-        //         console.log(err)
-        //     })
-        // }}
+            }}
+            
         
 
         >
@@ -68,9 +58,9 @@ export function LoginPage() {
                                     <TextField name="email" label="Email" type="email" />
                                     <TextField name="password" label="Password" type="password" />
 
-                                    <button type="submit" className="btn btn-primary mt-3">Register</button>
+                                    <button type="submit" className="btn btn-primary mt-3">Login</button>
                                     <div id="register-link" className="text-primary">
-                                        <Link to="/register" className="text-dark">Register here</Link>
+                                        <Link to="/register" className="text-primary">Register here</Link>
                                     </div>
 
                                 </Form>

@@ -18,8 +18,9 @@ namespace Back_end.Controllers
              _authorization = authorization;
          }
 
-        [HttpPost("api/Token")]
+         [HttpPost("api/Token")]
           public IActionResult CreateToken(AccountModel acc){
+              
               var token = _authorization.Authenticate(acc.Account,acc.Password);
               if(token == null) return Unauthorized();
                 return Ok(token);

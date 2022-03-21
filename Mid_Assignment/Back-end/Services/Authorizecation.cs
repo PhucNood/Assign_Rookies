@@ -10,32 +10,33 @@ namespace Back_end.Services
 {
     public class Authorizecation : IAuthorizecation
     {
-        private readonly IDictionary<string, string>  users;
+      
 
        private readonly LibraryContext _context;
 
-       public string Key { get; set; }
+       
 
 
        public Authorizecation(LibraryContext context)
        {
            _context = context;
-           users = _context.Users.ToList().ToDictionary(user => user.Account, user => user.Password);
+           
        }
 
 
        
-        public string Authenticate(string username, string password)
+        public string Authenticate(string account, string password)
         {
-                  if(!users.Any(user => user.Key == username && user.Value == password)) return null;
-
+            var users = _context.Users.ToList();
+                 if(!users.Any(user => user.Account.Equals(account) && user.Password.Equals(password))) return null;
+                  bool isSuper =users.FirstOrDefault(user=>user.Account.Equals(account)).IsSuper;
                   var tokenHandler = new JwtSecurityTokenHandler();
-                  var tokenKey = Encoding.ASCII.GetBytes(Key);
+                  var tokenKey = Encoding.ASCII.GetBytes("ByYM000OLlMQG6VVVp1OH7Xzyr7gHuw1qvUC5dcGt3SNM");
                   var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new Claim[]{
-                    new Claim(ClaimTypes.Name, username),
-                    new Claim(ClaimTypes.Role, "Admin")
+                    new Claim(ClaimTypes.Name, account),
+                    new Claim(ClaimTypes.Role, isSuper ?"Admin":"User")
                 }),
                 Expires = DateTime.UtcNow.AddDays(7),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(tokenKey), SecurityAlgorithms.HmacSha256Signature)
